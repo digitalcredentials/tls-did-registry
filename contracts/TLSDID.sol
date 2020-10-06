@@ -2,9 +2,14 @@
 pragma solidity >=0.4.22 <0.8.0;
 pragma experimental ABIEncoderV2;
 
-contract TLSDIDContract {
+contract TLSDID {
     address private owner = msg.sender;
+    string public domain;
+    string[] public flags;
+    uint64 public expiry;
     string public signature;
+
+    //Stores public key
     Attribute[] public attributes;
 
     constructor() public {
@@ -21,15 +26,23 @@ contract TLSDIDContract {
         _;
     }
 
+    function setDomain(string calldata _domain) external onlyOwner {
+        domain = _domain;
+    }
+
     function setSignature(string calldata _signature) external onlyOwner {
         signature = _signature;
     }
 
-    function addAttribute(string calldata name, string calldata value)
+    function setExpiry(uint64 _expiry) external onlyOwner {
+        expiry = _expiry;
+    }
+
+    function addAttribute(string calldata _name, string calldata _value)
         external
         onlyOwner
     {
-        attributes.push(Attribute(name, value));
+        attributes.push(Attribute(_name, _value));
     }
 
     function getAttributes() external view returns (Attribute[] memory) {

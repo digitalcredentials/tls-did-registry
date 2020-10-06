@@ -1,5 +1,5 @@
-const TLSDIDContractRegistry = artifacts.require('TLSDIDContractRegistry');
+const TLSDIDSCRegistry = artifacts.require('TLSDIDSCRegistry');
 
 module.exports = function (deployer) {
-  deployer.deploy(TLSDIDContractRegistry);
+  deployer.deploy(TLSDIDSCRegistry);
 };

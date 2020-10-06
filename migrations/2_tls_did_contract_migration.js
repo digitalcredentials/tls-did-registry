@@ -1,5 +1,5 @@
-const TLSDIDContract = artifacts.require('TLSDIDContract');
+const TLSDID = artifacts.require('TLSDID');
 
 module.exports = function (deployer) {
-  deployer.deploy(TLSDIDContract);
+  deployer.deploy(TLSDID);
 };

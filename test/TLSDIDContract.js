@@ -1,11 +1,9 @@
-const TLSDIDContract = artifacts.require('TLSDIDContract');
-const TLSDIDContractRegistry = artifacts.require('TLSDIDContractRegistry');
+const TLSDIDContract = artifacts.require('TLSDID');
 
 contract('TLSDIDContract', (accounts) => {
   let tlsdidContract = null;
   before(async () => {
     tlsdidContract = await TLSDIDContract.deployed();
-    tlsdidContractRegistry = await TLSDIDContractRegistry.deployed();
   });
 
   it('Should add signature to contract', async () => {
@@ -34,19 +32,6 @@ contract('TLSDIDContract', (accounts) => {
       attribute[0][1],
       'TestValue',
       'Attribute value was not added to contract'
-    );
-  });
-
-  it('Should add contract address to registry', async () => {
-    address = await tlsdidContract.address;
-    tlsdidContractRegistry.addTLSDIDContract('did:tls:example.com', address);
-    _address = await tlsdidContractRegistry.registry.call(
-      'did:tls:example.com'
-    );
-    assert.equal(
-      _address,
-      address,
-      'Address was not correctly added to contract'
     );
   });
 });
