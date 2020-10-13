@@ -1,0 +1,29 @@
+{
+  "name": "tls-did-registry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eth-gas-reporter": "^0.2.17",
+    "truffle": "^5.1.48",
+    "ganache-cli": "^6.12.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/truffle test",
+    "deploy": "./node_modules/.bin/truffle migrate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tls-did-project/tls-did-registry.git"
+  },
+  "author": "Kilian Käslin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tls-did-project/tls-did-registry/issues"
+  },
+  "homepage": "https://github.com/tls-did-project/tls-did-registry#readme"
+}
