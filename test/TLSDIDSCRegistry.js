@@ -1,5 +1,5 @@
 const TLSDIDContract = artifacts.require('TLSDID');
-const TLSDIDContractRegistry = artifacts.require('TLSDIDSCRegistry');
+const TLSDIDContractRegistry = artifacts.require('TLSDIDRegistry');
 
 contract('TLSDIDContract', (accounts) => {
   let tlsdidContract = null;
@@ -10,7 +10,7 @@ contract('TLSDIDContract', (accounts) => {
   });
 
   it('Should return empty response', async () => {
-    _addresses = await tlsdidContractRegistry.getTSLDIDContracts(
+    _addresses = await tlsdidContractRegistry.getContracts(
       'did:tls:example.org'
     );
 
@@ -19,8 +19,8 @@ contract('TLSDIDContract', (accounts) => {
 
   it('Should add contract address to registry', async () => {
     address = await tlsdidContract.address;
-    tlsdidContractRegistry.addTLSDIDContract('did:tls:example.org', address);
-    _addresses = await tlsdidContractRegistry.getTSLDIDContracts(
+    tlsdidContractRegistry.registerContract('did:tls:example.org', address);
+    _addresses = await tlsdidContractRegistry.getContracts(
       'did:tls:example.org'
     );
 
@@ -33,8 +33,8 @@ contract('TLSDIDContract', (accounts) => {
 
   it('Should not add identicall did => address mappings', async () => {
     address = await tlsdidContract.address;
-    tlsdidContractRegistry.addTLSDIDContract('did:tls:example.org', address);
-    _addresses = await tlsdidContractRegistry.getTSLDIDContracts(
+    tlsdidContractRegistry.registerContract('did:tls:example.org', address);
+    _addresses = await tlsdidContractRegistry.getContracts(
       'did:tls:example.org'
     );
 
@@ -47,11 +47,11 @@ contract('TLSDIDContract', (accounts) => {
 
   it('Should add non identicall did => address mappings', async () => {
     address = await tlsdidContract.address;
-    tlsdidContractRegistry.addTLSDIDContract(
+    tlsdidContractRegistry.registerContract(
       'did:tls:example.org',
       '0xdc2c16ccc8291c43b83d24e37900a3bed3eed408'
     );
-    _addresses = await tlsdidContractRegistry.getTSLDIDContracts(
+    _addresses = await tlsdidContractRegistry.getContracts(
       'did:tls:example.org'
     );
 
