@@ -5,11 +5,9 @@ pragma experimental ABIEncoderV2;
 contract TLSDID {
     address private owner = msg.sender;
     string public domain;
-    string[] public flags;
     uint64 public expiry;
     string public signature;
 
-    //Stores public key
     Attribute[] public attributes;
 
     constructor() public {
@@ -30,12 +28,12 @@ contract TLSDID {
         domain = _domain;
     }
 
-    function setSignature(string calldata _signature) external onlyOwner {
-        signature = _signature;
-    }
-
     function setExpiry(uint64 _expiry) external onlyOwner {
         expiry = _expiry;
+    }
+
+    function setSignature(string calldata _signature) external onlyOwner {
+        signature = _signature;
     }
 
     function addAttribute(string calldata _name, string calldata _value)

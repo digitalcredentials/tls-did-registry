@@ -12,8 +12,8 @@ contract TLSDIDRegistry {
 
     /// @notice Store mapping from DID to SC address
     /// @dev The addresses are stored in an array to make sure an existing mapping can not be overwriten.
-    /// @param _did The DID that mapps to a smart contract
-    /// @param _address The address of the smart contract
+    /// @param _did The DID mapping to a SC address
+    /// @param _address The address of the SC
     function registerContract(string calldata _did, address _address) external {
         AddressContainer storage container = registry[_did];
         if (!container.contained[_address]) {
@@ -22,6 +22,9 @@ contract TLSDIDRegistry {
         }
     }
 
+    /// @notice Returns the SC addresses stored for a DID
+    /// @dev If no mapping is found returns empty array
+    /// @param _did The DID mapping to SCs
     function getContracts(string calldata _did)
         external
         view
