@@ -6,31 +6,62 @@ contract('TLSDIDContract', (accounts) => {
     tlsdidContract = await TLSDIDContract.deployed();
   });
 
-  it('Should add signature to contract', async () => {
-    txnReceipt = await tlsdidContract.setSignature('Test', {
+  it('should add expiry to contract', async () => {
+    const expiryDate = Date.UTC(2024, 12, 31);
+    txnReceipt = await tlsdidContract.setExpiry(expiryDate, {
+      from: accounts[0],
+    });
+    const expiry = await tlsdidContract.expiry.call();
+    console.log(expiry);
+    assert.equal(expiry, expiryDate, 'Signature was not added to contract');
+  });
+
+  it('should add domain to contract', async () => {
+    txnReceipt = await tlsdidContract.setDomain('domain', {
+      from: accounts[0],
+    });
+    const domain = await tlsdidContract.domain.call();
+    assert.equal(domain, 'domain', 'Domain was not added to contract');
+  });
+
+  it('should add signature to contract', async () => {
+    txnReceipt = await tlsdidContract.setSignature('signature', {
       from: accounts[0],
     });
     signature = await tlsdidContract.signature.call();
-    assert.equal(signature, 'Test', 'Signature was not added to contract');
+    assert.equal(signature, 'signature', 'Signature was not added to contract');
   });
 
-  it('Should update signature in contract', async () => {
-    await tlsdidContract.setSignature('Test2', { from: accounts[0] });
+  it('should update signature in contract', async () => {
+    await tlsdidContract.setSignature('signatureUpdate', { from: accounts[0] });
     signature = await tlsdidContract.signature.call();
-    assert.equal(signature, 'Test2', 'Signature was not added to contract');
+    assert.equal(
+      signature,
+      'signatureUpdate',
+      'Signature was not added to contract'
+    );
   });
 
-  it('Should add attribute to contract', async () => {
-    await tlsdidContract.addAttribute('TestName', 'TestValue');
-    attribute = await tlsdidContract.getAttributes();
+  it('should add attribute to contract', async () => {
+    await tlsdidContract.addAttribute('parent/child', 'value');
+    const attributeCount = await tlsdidContract.getAttributeCount();
+
+    let attributes = [];
+    for (i = 0; i < attributeCount; i++) {
+      const attribute = await tlsdidContract.getAttribute(i);
+      const path = attribute['0'];
+      const value = attribute['1'];
+      attributes.push({ path, value });
+    }
+
     assert.equal(
-      attribute[0][0],
-      'TestName',
-      'Attribute name was not added to contract'
+      attributes[0].path,
+      'parent/child',
+      'Attribute path was not added to contract'
     );
     assert.equal(
-      attribute[0][1],
-      'TestValue',
+      attributes[0].value,
+      'value',
       'Attribute value was not added to contract'
     );
   });

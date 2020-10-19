@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.4.22 <0.8.0;
-pragma experimental ABIEncoderV2;
 
 contract TLSDID {
     address private owner = msg.sender;
@@ -15,7 +14,7 @@ contract TLSDID {
     }
 
     struct Attribute {
-        string name;
+        string path;
         string value;
     }
 
@@ -36,14 +35,24 @@ contract TLSDID {
         signature = _signature;
     }
 
-    function addAttribute(string calldata _name, string calldata _value)
+    function addAttribute(string calldata _path, string calldata _value)
         external
         onlyOwner
     {
-        attributes.push(Attribute(_name, _value));
+        attributes.push(Attribute(_path, _value));
     }
 
-    function getAttributes() external view returns (Attribute[] memory) {
-        return attributes;
+    function getAttributeCount() external view returns (uint256) {
+        return attributes.length;
+    }
+
+    function getAttribute(uint256 index)
+        external
+        view
+        returns (string memory, string memory)
+    {
+        string memory path = attributes[index].path;
+        string memory value = attributes[index].value;
+        return (path, value);
     }
 }
