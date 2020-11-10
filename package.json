@@ -1,6 +1,6 @@
 {
   "name": "tls-did-registry",
-  "version": "1.0.2",
+  "version": "0.0.1",
   "description": "",
   "main": "truffle-config.js",
   "directories": {
@@ -14,7 +14,8 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/truffle test",
-    "deploy": "./node_modules/.bin/truffle migrate"
+    "deploy": "./node_modules/.bin/truffle migrate",
+    "deploy-registry": "./node_modules/.bin/truffle migrate -f 3 --to 3"
   },
   "repository": {
     "type": "git",

@@ -46,22 +46,22 @@
   "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_did\",\"type\":\"string\"}],\"name\":\"getContracts\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_did\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"registerContract\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"getContracts(string)\":{\"details\":\"If no mapping is found returns empty array\",\"params\":{\"_did\":\"The DID mapping to SCs\"}},\"registerContract(string,address)\":{\"details\":\"The addresses are stored in an array to make sure an existing mapping can not be overwriten.\",\"params\":{\"_address\":\"The address of the SC\",\"_did\":\"The DID mapping to a SC address\"}}}},\"userdoc\":{\"methods\":{\"getContracts(string)\":{\"notice\":\"Returns the SC addresses stored for a DID\"},\"registerContract(string,address)\":{\"notice\":\"Store mapping from DID to SC address\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/kilian/Documents/tls-did-project/tls-did-registry/contracts/TLSDIDRegistry.sol\":\"TLSDIDRegistry\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/kilian/Documents/tls-did-project/tls-did-registry/contracts/TLSDIDRegistry.sol\":{\"keccak256\":\"0x1b507b767980d7a01fe83ca6e56a686d2a39db23bd896885a0f0dd8afec2866a\",\"urls\":[\"bzz-raw://8e9c2be257983d326413f0c1303ceaf1300d6448d64e823b36293c0378e32da3\",\"dweb:/ipfs/QmYybGG6coqhsR2EExpiPtAUeyCZQjfkof7qHu15txFES9\"]}},\"version\":1}",
   "bytecode": "0x608060405234801561001057600080fd5b506103d6806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80637f3c2c281461003b578063f44962fc146100d4575b600080fd5b6100d26004803603604081101561005157600080fd5b810190808035906020019064010000000081111561006e57600080fd5b82018360208201111561008057600080fd5b803590602001918460018302840111640100000000831117156100a257600080fd5b9091929391929390803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101a2565b005b61014b600480360360208110156100ea57600080fd5b810190808035906020019064010000000081111561010757600080fd5b82018360208201111561011957600080fd5b8035906020019184600183028401116401000000008311171561013b57600080fd5b90919293919293905050506102e8565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b8381101561018e578082015181840152602081019050610173565b505050509050019250505060405180910390f35b6000808484604051808383808284378083019250505092505050908152602001604051809103902090508060010160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff166102e257806000018290806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505060018160010160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505b50505050565b606060008383604051808383808284378083019250505092505050908152602001604051809103902060000180548060200260200160405190810160405280929190818152602001828054801561039457602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001906001019080831161034a575b505050505090509291505056fea265627a7a72315820b72a210164c81bb5d8fae87e0b8e94c6d5f63a5755b5a0c39da6a819c4f8f76664736f6c63430005100032",
   "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80637f3c2c281461003b578063f44962fc146100d4575b600080fd5b6100d26004803603604081101561005157600080fd5b810190808035906020019064010000000081111561006e57600080fd5b82018360208201111561008057600080fd5b803590602001918460018302840111640100000000831117156100a257600080fd5b9091929391929390803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101a2565b005b61014b600480360360208110156100ea57600080fd5b810190808035906020019064010000000081111561010757600080fd5b82018360208201111561011957600080fd5b8035906020019184600183028401116401000000008311171561013b57600080fd5b90919293919293905050506102e8565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b8381101561018e578082015181840152602081019050610173565b505050509050019250505060405180910390f35b6000808484604051808383808284378083019250505092505050908152602001604051809103902090508060010160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff166102e257806000018290806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505060018160010160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505b50505050565b606060008383604051808383808284378083019250505092505050908152602001604051809103902060000180548060200260200160405190810160405280929190818152602001828054801561039457602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001906001019080831161034a575b505050505090509291505056fea265627a7a72315820b72a210164c81bb5d8fae87e0b8e94c6d5f63a5755b5a0c39da6a819c4f8f76664736f6c63430005100032",
-  "sourceMap": "73:1137:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;73:1137:2;;;;;;;",
-  "deployedSourceMap": "73:1137:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;73:1137:2;;;;;;;;;;;;;;;;;;;;;;;;587:297;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;587:297:2;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;587:297:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;587:297:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;587:297:2;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1047:161;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1047:161:2;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;1047:161:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;1047:161:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;1047:161:2;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1047:161:2;;;;;;;;;;;;;;;;;587:297;672:34;709:8;718:4;;709:14;;;;;30:3:-1;22:6;14;1:33;57:3;49:6;45:16;35:26;;709:14:2;;;;;;;;;;;;;;;;;;672:51;;738:9;:19;;:29;758:8;738:29;;;;;;;;;;;;;;;;;;;;;;;;;733:145;;783:9;:19;;808:8;783:34;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;783:34:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;863:4;831:9;:19;;:29;851:8;831:29;;;;;;;;;;;;;;;;:36;;;;;;;;;;;;;;;;;;733:145;587:297;;;;:::o;1047:161::-;1138:16;1177:8;1186:4;;1177:14;;;;;30:3:-1;22:6;14;1:33;57:3;49:6;45:16;35:26;;1177:14:2;;;;;;;;;;;;;;;;;;:24;;1170:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1047:161;;;;:::o",
+  "sourceMap": "73:1137:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;73:1137:3;;;;;;;",
+  "deployedSourceMap": "73:1137:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;73:1137:3;;;;;;;;;;;;;;;;;;;;;;;;587:297;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;587:297:3;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;587:297:3;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;587:297:3;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;587:297:3;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;1047:161;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1047:161:3;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;1047:161:3;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;1047:161:3;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;1047:161:3;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1047:161:3;;;;;;;;;;;;;;;;;587:297;672:34;709:8;718:4;;709:14;;;;;30:3:-1;22:6;14;1:33;57:3;49:6;45:16;35:26;;709:14:3;;;;;;;;;;;;;;;;;;672:51;;738:9;:19;;:29;758:8;738:29;;;;;;;;;;;;;;;;;;;;;;;;;733:145;;783:9;:19;;808:8;783:34;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;783:34:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;863:4;831:9;:19;;:29;851:8;831:29;;;;;;;;;;;;;;;;:36;;;;;;;;;;;;;;;;;;733:145;587:297;;;;:::o;1047:161::-;1138:16;1177:8;1186:4;;1177:14;;;;;30:3:-1;22:6;14;1:33;57:3;49:6;45:16;35:26;;1177:14:3;;;;;;;;;;;;;;;;;;:24;;1170:31;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1047:161;;;;:::o",
   "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity >=0.4.22 <0.8.0;\n\ncontract TLSDIDRegistry {\n    //TODO rename | evaluate if we solve this with events\n    struct AddressContainer {\n        address[] addresses;\n        mapping(address => bool) contained;\n    }\n\n    mapping(string => AddressContainer) private registry;\n\n    /// @notice Store mapping from DID to SC address\n    /// @dev The addresses are stored in an array to make sure an existing mapping can not be overwriten.\n    /// @param _did The DID mapping to a SC address\n    /// @param _address The address of the SC\n    function registerContract(string calldata _did, address _address) external {\n        AddressContainer storage container = registry[_did];\n        if (!container.contained[_address]) {\n            container.addresses.push(_address);\n            container.contained[_address] = true;\n        }\n    }\n\n    /// @notice Returns the SC addresses stored for a DID\n    /// @dev If no mapping is found returns empty array\n    /// @param _did The DID mapping to SCs\n    function getContracts(string calldata _did)\n        external\n        view\n        returns (address[] memory)\n    {\n        return registry[_did].addresses;\n    }\n}\n",
   "sourcePath": "/Users/kilian/Documents/tls-did-project/tls-did-registry/contracts/TLSDIDRegistry.sol",
   "ast": {
     "absolutePath": "/Users/kilian/Documents/tls-did-project/tls-did-registry/contracts/TLSDIDRegistry.sol",
     "exportedSymbols": {
       "TLSDIDRegistry": [
-        207
+        234
       ]
     },
-    "id": 208,
+    "id": 235,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 143,
+        "id": 170,
         "literals": [
           "solidity",
           ">=",
@@ -72,7 +72,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "39:32:2"
+        "src": "39:32:3"
       },
       {
         "baseContracts": [],
@@ -80,24 +80,24 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 207,
+        "id": 234,
         "linearizedBaseContracts": [
-          207
+          234
         ],
         "name": "TLSDIDRegistry",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "TLSDIDRegistry.AddressContainer",
-            "id": 151,
+            "id": 178,
             "members": [
               {
                 "constant": false,
-                "id": 146,
+                "id": 173,
                 "name": "addresses",
                 "nodeType": "VariableDeclaration",
-                "scope": 151,
-                "src": "195:19:2",
+                "scope": 178,
+                "src": "195:19:3",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -106,20 +106,20 @@
                 },
                 "typeName": {
                   "baseType": {
-                    "id": 144,
+                    "id": 171,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "195:7:2",
+                    "src": "195:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 145,
+                  "id": 172,
                   "length": null,
                   "nodeType": "ArrayTypeName",
-                  "src": "195:9:2",
+                  "src": "195:9:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                     "typeString": "address[]"
@@ -130,11 +130,11 @@
               },
               {
                 "constant": false,
-                "id": 150,
+                "id": 177,
                 "name": "contained",
                 "nodeType": "VariableDeclaration",
-                "scope": 151,
-                "src": "224:34:2",
+                "scope": 178,
+                "src": "224:34:3",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -142,28 +142,28 @@
                   "typeString": "mapping(address => bool)"
                 },
                 "typeName": {
-                  "id": 149,
+                  "id": 176,
                   "keyType": {
-                    "id": 147,
+                    "id": 174,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "232:7:2",
+                    "src": "232:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "224:24:2",
+                  "src": "224:24:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                     "typeString": "mapping(address => bool)"
                   },
                   "valueType": {
-                    "id": 148,
+                    "id": 175,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "243:4:2",
+                    "src": "243:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -176,50 +176,50 @@
             ],
             "name": "AddressContainer",
             "nodeType": "StructDefinition",
-            "scope": 207,
-            "src": "161:104:2",
+            "scope": 234,
+            "src": "161:104:3",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 155,
+            "id": 182,
             "name": "registry",
             "nodeType": "VariableDeclaration",
-            "scope": 207,
-            "src": "271:52:2",
+            "scope": 234,
+            "src": "271:52:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$151_storage_$",
+              "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$178_storage_$",
               "typeString": "mapping(string => struct TLSDIDRegistry.AddressContainer)"
             },
             "typeName": {
-              "id": 154,
+              "id": 181,
               "keyType": {
-                "id": 152,
+                "id": 179,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
-                "src": "279:6:2",
+                "src": "279:6:3",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
                   "typeString": "string"
                 }
               },
               "nodeType": "Mapping",
-              "src": "271:35:2",
+              "src": "271:35:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$151_storage_$",
+                "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$178_storage_$",
                 "typeString": "mapping(string => struct TLSDIDRegistry.AddressContainer)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 153,
+                "id": 180,
                 "name": "AddressContainer",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 151,
-                "src": "289:16:2",
+                "referencedDeclaration": 178,
+                "src": "289:16:3",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_AddressContainer_$151_storage_ptr",
+                  "typeIdentifier": "t_struct$_AddressContainer_$178_storage_ptr",
                   "typeString": "struct TLSDIDRegistry.AddressContainer"
                 }
               }
@@ -229,37 +229,37 @@
           },
           {
             "body": {
-              "id": 191,
+              "id": 218,
               "nodeType": "Block",
-              "src": "662:222:2",
+              "src": "662:222:3",
               "statements": [
                 {
                   "assignments": [
-                    163
+                    190
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 163,
+                      "id": 190,
                       "name": "container",
                       "nodeType": "VariableDeclaration",
-                      "scope": 191,
-                      "src": "672:34:2",
+                      "scope": 218,
+                      "src": "672:34:3",
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_AddressContainer_$151_storage_ptr",
+                        "typeIdentifier": "t_struct$_AddressContainer_$178_storage_ptr",
                         "typeString": "struct TLSDIDRegistry.AddressContainer"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 162,
+                        "id": 189,
                         "name": "AddressContainer",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 151,
-                        "src": "672:16:2",
+                        "referencedDeclaration": 178,
+                        "src": "672:16:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_AddressContainer_$151_storage_ptr",
+                          "typeIdentifier": "t_struct$_AddressContainer_$178_storage_ptr",
                           "typeString": "struct TLSDIDRegistry.AddressContainer"
                         }
                       },
@@ -267,31 +267,31 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 167,
+                  "id": 194,
                   "initialValue": {
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 164,
+                      "id": 191,
                       "name": "registry",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 155,
-                      "src": "709:8:2",
+                      "referencedDeclaration": 182,
+                      "src": "709:8:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$151_storage_$",
+                        "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$178_storage_$",
                         "typeString": "mapping(string memory => struct TLSDIDRegistry.AddressContainer storage ref)"
                       }
                     },
-                    "id": 166,
+                    "id": 193,
                     "indexExpression": {
                       "argumentTypes": null,
-                      "id": 165,
+                      "id": 192,
                       "name": "_did",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 157,
-                      "src": "718:4:2",
+                      "referencedDeclaration": 184,
+                      "src": "718:4:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_calldata_ptr",
                         "typeString": "string calldata"
@@ -302,19 +302,19 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "709:14:2",
+                    "src": "709:14:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_AddressContainer_$151_storage",
+                      "typeIdentifier": "t_struct$_AddressContainer_$178_storage",
                       "typeString": "struct TLSDIDRegistry.AddressContainer storage ref"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "672:51:2"
+                  "src": "672:51:3"
                 },
                 {
                   "condition": {
                     "argumentTypes": null,
-                    "id": 172,
+                    "id": 199,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -322,47 +322,47 @@
                     "nodeType": "UnaryOperation",
                     "operator": "!",
                     "prefix": true,
-                    "src": "737:30:2",
+                    "src": "737:30:3",
                     "subExpression": {
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 168,
+                          "id": 195,
                           "name": "container",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 163,
-                          "src": "738:9:2",
+                          "referencedDeclaration": 190,
+                          "src": "738:9:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_AddressContainer_$151_storage_ptr",
+                            "typeIdentifier": "t_struct$_AddressContainer_$178_storage_ptr",
                             "typeString": "struct TLSDIDRegistry.AddressContainer storage pointer"
                           }
                         },
-                        "id": 169,
+                        "id": 196,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "contained",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 150,
-                        "src": "738:19:2",
+                        "referencedDeclaration": 177,
+                        "src": "738:19:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                           "typeString": "mapping(address => bool)"
                         }
                       },
-                      "id": 171,
+                      "id": 198,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 170,
+                        "id": 197,
                         "name": "_address",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 159,
-                        "src": "758:8:2",
+                        "referencedDeclaration": 186,
+                        "src": "758:8:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -373,7 +373,7 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "738:29:2",
+                      "src": "738:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -385,13 +385,13 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 190,
+                  "id": 217,
                   "nodeType": "IfStatement",
-                  "src": "733:145:2",
+                  "src": "733:145:3",
                   "trueBody": {
-                    "id": 189,
+                    "id": 216,
                     "nodeType": "Block",
-                    "src": "769:109:2",
+                    "src": "769:109:3",
                     "statements": [
                       {
                         "expression": {
@@ -399,12 +399,12 @@
                           "arguments": [
                             {
                               "argumentTypes": null,
-                              "id": 178,
+                              "id": 205,
                               "name": "_address",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 159,
-                              "src": "808:8:2",
+                              "referencedDeclaration": 186,
+                              "src": "808:8:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -422,32 +422,32 @@
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 173,
+                                "id": 200,
                                 "name": "container",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 163,
-                                "src": "783:9:2",
+                                "referencedDeclaration": 190,
+                                "src": "783:9:3",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_AddressContainer_$151_storage_ptr",
+                                  "typeIdentifier": "t_struct$_AddressContainer_$178_storage_ptr",
                                   "typeString": "struct TLSDIDRegistry.AddressContainer storage pointer"
                                 }
                               },
-                              "id": 176,
+                              "id": 203,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "addresses",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 146,
-                              "src": "783:19:2",
+                              "referencedDeclaration": 173,
+                              "src": "783:19:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_address_$dyn_storage",
                                 "typeString": "address[] storage ref"
                               }
                             },
-                            "id": 177,
+                            "id": 204,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -455,13 +455,13 @@
                             "memberName": "push",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "783:24:2",
+                            "src": "783:24:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
                               "typeString": "function (address) returns (uint256)"
                             }
                           },
-                          "id": 179,
+                          "id": 206,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -469,20 +469,20 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "783:34:2",
+                          "src": "783:34:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 180,
+                        "id": 207,
                         "nodeType": "ExpressionStatement",
-                        "src": "783:34:2"
+                        "src": "783:34:3"
                       },
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 187,
+                          "id": 214,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -493,40 +493,40 @@
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 181,
+                                "id": 208,
                                 "name": "container",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 163,
-                                "src": "831:9:2",
+                                "referencedDeclaration": 190,
+                                "src": "831:9:3",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_AddressContainer_$151_storage_ptr",
+                                  "typeIdentifier": "t_struct$_AddressContainer_$178_storage_ptr",
                                   "typeString": "struct TLSDIDRegistry.AddressContainer storage pointer"
                                 }
                               },
-                              "id": 184,
+                              "id": 211,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "contained",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 150,
-                              "src": "831:19:2",
+                              "referencedDeclaration": 177,
+                              "src": "831:19:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                                 "typeString": "mapping(address => bool)"
                               }
                             },
-                            "id": 185,
+                            "id": 212,
                             "indexExpression": {
                               "argumentTypes": null,
-                              "id": 183,
+                              "id": 210,
                               "name": "_address",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 159,
-                              "src": "851:8:2",
+                              "referencedDeclaration": 186,
+                              "src": "851:8:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -537,7 +537,7 @@
                             "isPure": false,
                             "lValueRequested": true,
                             "nodeType": "IndexAccess",
-                            "src": "831:29:2",
+                            "src": "831:29:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -548,14 +548,14 @@
                           "rightHandSide": {
                             "argumentTypes": null,
                             "hexValue": "74727565",
-                            "id": 186,
+                            "id": 213,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "bool",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "863:4:2",
+                            "src": "863:4:3",
                             "subdenomination": null,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
@@ -563,15 +563,15 @@
                             },
                             "value": "true"
                           },
-                          "src": "831:36:2",
+                          "src": "831:36:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "id": 188,
+                        "id": 215,
                         "nodeType": "ExpressionStatement",
-                        "src": "831:36:2"
+                        "src": "831:36:3"
                       }
                     ]
                   }
@@ -579,23 +579,23 @@
               ]
             },
             "documentation": "@notice Store mapping from DID to SC address\n @dev The addresses are stored in an array to make sure an existing mapping can not be overwriten.\n @param _did The DID mapping to a SC address\n @param _address The address of the SC",
-            "id": 192,
+            "id": 219,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "registerContract",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 160,
+              "id": 187,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 157,
+                  "id": 184,
                   "name": "_did",
                   "nodeType": "VariableDeclaration",
-                  "scope": 192,
-                  "src": "613:20:2",
+                  "scope": 219,
+                  "src": "613:20:3",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -603,10 +603,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 156,
+                    "id": 183,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "613:6:2",
+                    "src": "613:6:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -617,11 +617,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 159,
+                  "id": 186,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 192,
-                  "src": "635:16:2",
+                  "scope": 219,
+                  "src": "635:16:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -629,10 +629,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 158,
+                    "id": 185,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "635:7:2",
+                    "src": "635:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -643,25 +643,25 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "612:40:2"
+              "src": "612:40:3"
             },
             "returnParameters": {
-              "id": 161,
+              "id": 188,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "662:0:2"
+              "src": "662:0:3"
             },
-            "scope": 207,
-            "src": "587:297:2",
+            "scope": 234,
+            "src": "587:297:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 205,
+              "id": 232,
               "nodeType": "Block",
-              "src": "1160:48:2",
+              "src": "1160:48:3",
               "statements": [
                 {
                   "expression": {
@@ -670,26 +670,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 200,
+                        "id": 227,
                         "name": "registry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 155,
-                        "src": "1177:8:2",
+                        "referencedDeclaration": 182,
+                        "src": "1177:8:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$151_storage_$",
+                          "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$178_storage_$",
                           "typeString": "mapping(string memory => struct TLSDIDRegistry.AddressContainer storage ref)"
                         }
                       },
-                      "id": 202,
+                      "id": 229,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 201,
+                        "id": 228,
                         "name": "_did",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 194,
-                        "src": "1186:4:2",
+                        "referencedDeclaration": 221,
+                        "src": "1186:4:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
@@ -700,51 +700,51 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "1177:14:2",
+                      "src": "1177:14:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_AddressContainer_$151_storage",
+                        "typeIdentifier": "t_struct$_AddressContainer_$178_storage",
                         "typeString": "struct TLSDIDRegistry.AddressContainer storage ref"
                       }
                     },
-                    "id": 203,
+                    "id": 230,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "addresses",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 146,
-                    "src": "1177:24:2",
+                    "referencedDeclaration": 173,
+                    "src": "1177:24:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage",
                       "typeString": "address[] storage ref"
                     }
                   },
-                  "functionReturnParameters": 199,
-                  "id": 204,
+                  "functionReturnParameters": 226,
+                  "id": 231,
                   "nodeType": "Return",
-                  "src": "1170:31:2"
+                  "src": "1170:31:3"
                 }
               ]
             },
             "documentation": "@notice Returns the SC addresses stored for a DID\n @dev If no mapping is found returns empty array\n @param _did The DID mapping to SCs",
-            "id": 206,
+            "id": 233,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getContracts",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 195,
+              "id": 222,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 194,
+                  "id": 221,
                   "name": "_did",
                   "nodeType": "VariableDeclaration",
-                  "scope": 206,
-                  "src": "1069:20:2",
+                  "scope": 233,
+                  "src": "1069:20:3",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -752,10 +752,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 193,
+                    "id": 220,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1069:6:2",
+                    "src": "1069:6:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -765,19 +765,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1068:22:2"
+              "src": "1068:22:3"
             },
             "returnParameters": {
-              "id": 199,
+              "id": 226,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 198,
+                  "id": 225,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 206,
-                  "src": "1138:16:2",
+                  "scope": 233,
+                  "src": "1138:16:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -786,20 +786,20 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 196,
+                      "id": 223,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1138:7:2",
+                      "src": "1138:7:3",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 197,
+                    "id": 224,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "1138:9:2",
+                    "src": "1138:9:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -809,33 +809,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1137:18:2"
+              "src": "1137:18:3"
             },
-            "scope": 207,
-            "src": "1047:161:2",
+            "scope": 234,
+            "src": "1047:161:3",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 208,
-        "src": "73:1137:2"
+        "scope": 235,
+        "src": "73:1137:3"
       }
     ],
-    "src": "39:1172:2"
+    "src": "39:1172:3"
   },
   "legacyAST": {
     "absolutePath": "/Users/kilian/Documents/tls-did-project/tls-did-registry/contracts/TLSDIDRegistry.sol",
     "exportedSymbols": {
       "TLSDIDRegistry": [
-        207
+        234
       ]
     },
-    "id": 208,
+    "id": 235,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 143,
+        "id": 170,
         "literals": [
           "solidity",
           ">=",
@@ -846,7 +846,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "39:32:2"
+        "src": "39:32:3"
       },
       {
         "baseContracts": [],
@@ -854,24 +854,24 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 207,
+        "id": 234,
         "linearizedBaseContracts": [
-          207
+          234
         ],
         "name": "TLSDIDRegistry",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "TLSDIDRegistry.AddressContainer",
-            "id": 151,
+            "id": 178,
             "members": [
               {
                 "constant": false,
-                "id": 146,
+                "id": 173,
                 "name": "addresses",
                 "nodeType": "VariableDeclaration",
-                "scope": 151,
-                "src": "195:19:2",
+                "scope": 178,
+                "src": "195:19:3",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -880,20 +880,20 @@
                 },
                 "typeName": {
                   "baseType": {
-                    "id": 144,
+                    "id": 171,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "195:7:2",
+                    "src": "195:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 145,
+                  "id": 172,
                   "length": null,
                   "nodeType": "ArrayTypeName",
-                  "src": "195:9:2",
+                  "src": "195:9:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                     "typeString": "address[]"
@@ -904,11 +904,11 @@
               },
               {
                 "constant": false,
-                "id": 150,
+                "id": 177,
                 "name": "contained",
                 "nodeType": "VariableDeclaration",
-                "scope": 151,
-                "src": "224:34:2",
+                "scope": 178,
+                "src": "224:34:3",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -916,28 +916,28 @@
                   "typeString": "mapping(address => bool)"
                 },
                 "typeName": {
-                  "id": 149,
+                  "id": 176,
                   "keyType": {
-                    "id": 147,
+                    "id": 174,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "232:7:2",
+                    "src": "232:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
                   "nodeType": "Mapping",
-                  "src": "224:24:2",
+                  "src": "224:24:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                     "typeString": "mapping(address => bool)"
                   },
                   "valueType": {
-                    "id": 148,
+                    "id": 175,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "243:4:2",
+                    "src": "243:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -950,50 +950,50 @@
             ],
             "name": "AddressContainer",
             "nodeType": "StructDefinition",
-            "scope": 207,
-            "src": "161:104:2",
+            "scope": 234,
+            "src": "161:104:3",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 155,
+            "id": 182,
             "name": "registry",
             "nodeType": "VariableDeclaration",
-            "scope": 207,
-            "src": "271:52:2",
+            "scope": 234,
+            "src": "271:52:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$151_storage_$",
+              "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$178_storage_$",
               "typeString": "mapping(string => struct TLSDIDRegistry.AddressContainer)"
             },
             "typeName": {
-              "id": 154,
+              "id": 181,
               "keyType": {
-                "id": 152,
+                "id": 179,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
-                "src": "279:6:2",
+                "src": "279:6:3",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
                   "typeString": "string"
                 }
               },
               "nodeType": "Mapping",
-              "src": "271:35:2",
+              "src": "271:35:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$151_storage_$",
+                "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$178_storage_$",
                 "typeString": "mapping(string => struct TLSDIDRegistry.AddressContainer)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 153,
+                "id": 180,
                 "name": "AddressContainer",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 151,
-                "src": "289:16:2",
+                "referencedDeclaration": 178,
+                "src": "289:16:3",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_AddressContainer_$151_storage_ptr",
+                  "typeIdentifier": "t_struct$_AddressContainer_$178_storage_ptr",
                   "typeString": "struct TLSDIDRegistry.AddressContainer"
                 }
               }
@@ -1003,37 +1003,37 @@
           },
           {
             "body": {
-              "id": 191,
+              "id": 218,
               "nodeType": "Block",
-              "src": "662:222:2",
+              "src": "662:222:3",
               "statements": [
                 {
                   "assignments": [
-                    163
+                    190
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 163,
+                      "id": 190,
                       "name": "container",
                       "nodeType": "VariableDeclaration",
-                      "scope": 191,
-                      "src": "672:34:2",
+                      "scope": 218,
+                      "src": "672:34:3",
                       "stateVariable": false,
                       "storageLocation": "storage",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_AddressContainer_$151_storage_ptr",
+                        "typeIdentifier": "t_struct$_AddressContainer_$178_storage_ptr",
                         "typeString": "struct TLSDIDRegistry.AddressContainer"
                       },
                       "typeName": {
                         "contractScope": null,
-                        "id": 162,
+                        "id": 189,
                         "name": "AddressContainer",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 151,
-                        "src": "672:16:2",
+                        "referencedDeclaration": 178,
+                        "src": "672:16:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_AddressContainer_$151_storage_ptr",
+                          "typeIdentifier": "t_struct$_AddressContainer_$178_storage_ptr",
                           "typeString": "struct TLSDIDRegistry.AddressContainer"
                         }
                       },
@@ -1041,31 +1041,31 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 167,
+                  "id": 194,
                   "initialValue": {
                     "argumentTypes": null,
                     "baseExpression": {
                       "argumentTypes": null,
-                      "id": 164,
+                      "id": 191,
                       "name": "registry",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 155,
-                      "src": "709:8:2",
+                      "referencedDeclaration": 182,
+                      "src": "709:8:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$151_storage_$",
+                        "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$178_storage_$",
                         "typeString": "mapping(string memory => struct TLSDIDRegistry.AddressContainer storage ref)"
                       }
                     },
-                    "id": 166,
+                    "id": 193,
                     "indexExpression": {
                       "argumentTypes": null,
-                      "id": 165,
+                      "id": 192,
                       "name": "_did",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 157,
-                      "src": "718:4:2",
+                      "referencedDeclaration": 184,
+                      "src": "718:4:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_calldata_ptr",
                         "typeString": "string calldata"
@@ -1076,19 +1076,19 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
-                    "src": "709:14:2",
+                    "src": "709:14:3",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_AddressContainer_$151_storage",
+                      "typeIdentifier": "t_struct$_AddressContainer_$178_storage",
                       "typeString": "struct TLSDIDRegistry.AddressContainer storage ref"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
-                  "src": "672:51:2"
+                  "src": "672:51:3"
                 },
                 {
                   "condition": {
                     "argumentTypes": null,
-                    "id": 172,
+                    "id": 199,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1096,47 +1096,47 @@
                     "nodeType": "UnaryOperation",
                     "operator": "!",
                     "prefix": true,
-                    "src": "737:30:2",
+                    "src": "737:30:3",
                     "subExpression": {
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
                         "expression": {
                           "argumentTypes": null,
-                          "id": 168,
+                          "id": 195,
                           "name": "container",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 163,
-                          "src": "738:9:2",
+                          "referencedDeclaration": 190,
+                          "src": "738:9:3",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_AddressContainer_$151_storage_ptr",
+                            "typeIdentifier": "t_struct$_AddressContainer_$178_storage_ptr",
                             "typeString": "struct TLSDIDRegistry.AddressContainer storage pointer"
                           }
                         },
-                        "id": 169,
+                        "id": 196,
                         "isConstant": false,
                         "isLValue": true,
                         "isPure": false,
                         "lValueRequested": false,
                         "memberName": "contained",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 150,
-                        "src": "738:19:2",
+                        "referencedDeclaration": 177,
+                        "src": "738:19:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                           "typeString": "mapping(address => bool)"
                         }
                       },
-                      "id": 171,
+                      "id": 198,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 170,
+                        "id": 197,
                         "name": "_address",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 159,
-                        "src": "758:8:2",
+                        "referencedDeclaration": 186,
+                        "src": "758:8:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
                           "typeString": "address"
@@ -1147,7 +1147,7 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "738:29:2",
+                      "src": "738:29:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bool",
                         "typeString": "bool"
@@ -1159,13 +1159,13 @@
                     }
                   },
                   "falseBody": null,
-                  "id": 190,
+                  "id": 217,
                   "nodeType": "IfStatement",
-                  "src": "733:145:2",
+                  "src": "733:145:3",
                   "trueBody": {
-                    "id": 189,
+                    "id": 216,
                     "nodeType": "Block",
-                    "src": "769:109:2",
+                    "src": "769:109:3",
                     "statements": [
                       {
                         "expression": {
@@ -1173,12 +1173,12 @@
                           "arguments": [
                             {
                               "argumentTypes": null,
-                              "id": 178,
+                              "id": 205,
                               "name": "_address",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 159,
-                              "src": "808:8:2",
+                              "referencedDeclaration": 186,
+                              "src": "808:8:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -1196,32 +1196,32 @@
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 173,
+                                "id": 200,
                                 "name": "container",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 163,
-                                "src": "783:9:2",
+                                "referencedDeclaration": 190,
+                                "src": "783:9:3",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_AddressContainer_$151_storage_ptr",
+                                  "typeIdentifier": "t_struct$_AddressContainer_$178_storage_ptr",
                                   "typeString": "struct TLSDIDRegistry.AddressContainer storage pointer"
                                 }
                               },
-                              "id": 176,
+                              "id": 203,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "addresses",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 146,
-                              "src": "783:19:2",
+                              "referencedDeclaration": 173,
+                              "src": "783:19:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_address_$dyn_storage",
                                 "typeString": "address[] storage ref"
                               }
                             },
-                            "id": 177,
+                            "id": 204,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -1229,13 +1229,13 @@
                             "memberName": "push",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": null,
-                            "src": "783:24:2",
+                            "src": "783:24:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
                               "typeString": "function (address) returns (uint256)"
                             }
                           },
-                          "id": 179,
+                          "id": 206,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1243,20 +1243,20 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "783:34:2",
+                          "src": "783:34:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "id": 180,
+                        "id": 207,
                         "nodeType": "ExpressionStatement",
-                        "src": "783:34:2"
+                        "src": "783:34:3"
                       },
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 187,
+                          "id": 214,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1267,40 +1267,40 @@
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 181,
+                                "id": 208,
                                 "name": "container",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 163,
-                                "src": "831:9:2",
+                                "referencedDeclaration": 190,
+                                "src": "831:9:3",
                                 "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_AddressContainer_$151_storage_ptr",
+                                  "typeIdentifier": "t_struct$_AddressContainer_$178_storage_ptr",
                                   "typeString": "struct TLSDIDRegistry.AddressContainer storage pointer"
                                 }
                               },
-                              "id": 184,
+                              "id": 211,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
                               "memberName": "contained",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 150,
-                              "src": "831:19:2",
+                              "referencedDeclaration": 177,
+                              "src": "831:19:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                                 "typeString": "mapping(address => bool)"
                               }
                             },
-                            "id": 185,
+                            "id": 212,
                             "indexExpression": {
                               "argumentTypes": null,
-                              "id": 183,
+                              "id": 210,
                               "name": "_address",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 159,
-                              "src": "851:8:2",
+                              "referencedDeclaration": 186,
+                              "src": "851:8:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address",
                                 "typeString": "address"
@@ -1311,7 +1311,7 @@
                             "isPure": false,
                             "lValueRequested": true,
                             "nodeType": "IndexAccess",
-                            "src": "831:29:2",
+                            "src": "831:29:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -1322,14 +1322,14 @@
                           "rightHandSide": {
                             "argumentTypes": null,
                             "hexValue": "74727565",
-                            "id": 186,
+                            "id": 213,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "bool",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "863:4:2",
+                            "src": "863:4:3",
                             "subdenomination": null,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
@@ -1337,15 +1337,15 @@
                             },
                             "value": "true"
                           },
-                          "src": "831:36:2",
+                          "src": "831:36:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "id": 188,
+                        "id": 215,
                         "nodeType": "ExpressionStatement",
-                        "src": "831:36:2"
+                        "src": "831:36:3"
                       }
                     ]
                   }
@@ -1353,23 +1353,23 @@
               ]
             },
             "documentation": "@notice Store mapping from DID to SC address\n @dev The addresses are stored in an array to make sure an existing mapping can not be overwriten.\n @param _did The DID mapping to a SC address\n @param _address The address of the SC",
-            "id": 192,
+            "id": 219,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "registerContract",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 160,
+              "id": 187,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 157,
+                  "id": 184,
                   "name": "_did",
                   "nodeType": "VariableDeclaration",
-                  "scope": 192,
-                  "src": "613:20:2",
+                  "scope": 219,
+                  "src": "613:20:3",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1377,10 +1377,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 156,
+                    "id": 183,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "613:6:2",
+                    "src": "613:6:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1391,11 +1391,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 159,
+                  "id": 186,
                   "name": "_address",
                   "nodeType": "VariableDeclaration",
-                  "scope": 192,
-                  "src": "635:16:2",
+                  "scope": 219,
+                  "src": "635:16:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1403,10 +1403,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 158,
+                    "id": 185,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "635:7:2",
+                    "src": "635:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1417,25 +1417,25 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "612:40:2"
+              "src": "612:40:3"
             },
             "returnParameters": {
-              "id": 161,
+              "id": 188,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "662:0:2"
+              "src": "662:0:3"
             },
-            "scope": 207,
-            "src": "587:297:2",
+            "scope": 234,
+            "src": "587:297:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           },
           {
             "body": {
-              "id": 205,
+              "id": 232,
               "nodeType": "Block",
-              "src": "1160:48:2",
+              "src": "1160:48:3",
               "statements": [
                 {
                   "expression": {
@@ -1444,26 +1444,26 @@
                       "argumentTypes": null,
                       "baseExpression": {
                         "argumentTypes": null,
-                        "id": 200,
+                        "id": 227,
                         "name": "registry",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 155,
-                        "src": "1177:8:2",
+                        "referencedDeclaration": 182,
+                        "src": "1177:8:3",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$151_storage_$",
+                          "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_AddressContainer_$178_storage_$",
                           "typeString": "mapping(string memory => struct TLSDIDRegistry.AddressContainer storage ref)"
                         }
                       },
-                      "id": 202,
+                      "id": 229,
                       "indexExpression": {
                         "argumentTypes": null,
-                        "id": 201,
+                        "id": 228,
                         "name": "_did",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 194,
-                        "src": "1186:4:2",
+                        "referencedDeclaration": 221,
+                        "src": "1186:4:3",
                         "typeDescriptions": {
                           "typeIdentifier": "t_string_calldata_ptr",
                           "typeString": "string calldata"
@@ -1474,51 +1474,51 @@
                       "isPure": false,
                       "lValueRequested": false,
                       "nodeType": "IndexAccess",
-                      "src": "1177:14:2",
+                      "src": "1177:14:3",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_AddressContainer_$151_storage",
+                        "typeIdentifier": "t_struct$_AddressContainer_$178_storage",
                         "typeString": "struct TLSDIDRegistry.AddressContainer storage ref"
                       }
                     },
-                    "id": 203,
+                    "id": 230,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
                     "lValueRequested": false,
                     "memberName": "addresses",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 146,
-                    "src": "1177:24:2",
+                    "referencedDeclaration": 173,
+                    "src": "1177:24:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage",
                       "typeString": "address[] storage ref"
                     }
                   },
-                  "functionReturnParameters": 199,
-                  "id": 204,
+                  "functionReturnParameters": 226,
+                  "id": 231,
                   "nodeType": "Return",
-                  "src": "1170:31:2"
+                  "src": "1170:31:3"
                 }
               ]
             },
             "documentation": "@notice Returns the SC addresses stored for a DID\n @dev If no mapping is found returns empty array\n @param _did The DID mapping to SCs",
-            "id": 206,
+            "id": 233,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "getContracts",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 195,
+              "id": 222,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 194,
+                  "id": 221,
                   "name": "_did",
                   "nodeType": "VariableDeclaration",
-                  "scope": 206,
-                  "src": "1069:20:2",
+                  "scope": 233,
+                  "src": "1069:20:3",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -1526,10 +1526,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 193,
+                    "id": 220,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1069:6:2",
+                    "src": "1069:6:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1539,19 +1539,19 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1068:22:2"
+              "src": "1068:22:3"
             },
             "returnParameters": {
-              "id": 199,
+              "id": 226,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 198,
+                  "id": 225,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 206,
-                  "src": "1138:16:2",
+                  "scope": 233,
+                  "src": "1138:16:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1560,20 +1560,20 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 196,
+                      "id": 223,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1138:7:2",
+                      "src": "1138:7:3",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 197,
+                    "id": 224,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "1138:9:2",
+                    "src": "1138:9:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -1583,20 +1583,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1137:18:2"
+              "src": "1137:18:3"
             },
-            "scope": 207,
-            "src": "1047:161:2",
+            "scope": 234,
+            "src": "1047:161:3",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 208,
-        "src": "73:1137:2"
+        "scope": 235,
+        "src": "73:1137:3"
       }
     ],
-    "src": "39:1172:2"
+    "src": "39:1172:3"
   },
   "compiler": {
     "name": "solc",
@@ -1620,10 +1620,88 @@
       "links": {},
       "address": "0xF7fBa67a3f6b05A9E0DA8DcB1f44aE037134eAE4",
       "transactionHash": "0x6749cb17c540652d5bca90ff795b0bc16b698d16b8429a9f2e06a8e3f966911f"
+    },
+    "1603115330674": {
+      "events": {},
+      "links": {},
+      "address": "0xD4a56F119d8d287B8C2fDF02Ae96685eD39d0Aea",
+      "transactionHash": "0xb38cd163d770d1d0d31ab9eeb763984f3ce38a6afe42d629cd8ed58ab482a890"
+    },
+    "1603115468198": {
+      "events": {},
+      "links": {},
+      "address": "0xe28131a74c9Fb412f0e57AD4614dB1A8D6a01793",
+      "transactionHash": "0x3a52cb4d9492a50ff7c0bd0cbb21716193c0518d808f45cbf35218d828b9c35d"
+    },
+    "1603447629832": {
+      "events": {},
+      "links": {},
+      "address": "0x7326547E7E19b1566f625c89657F48FBd7F442c9",
+      "transactionHash": "0x5173ed30d767eaab49396922febced641e95a8544e039aa0a9cb5a216b63d14c"
+    },
+    "1603464885772": {
+      "events": {},
+      "links": {},
+      "address": "0xb9dcC7aF6C709C5180F56058545B8ec8ce3Afd77",
+      "transactionHash": "0x1d541f542e613a162a9d1b276dfb4237c421f141bb4c8e8a2e53c45daf98ba6e"
+    },
+    "1603466103155": {
+      "events": {},
+      "links": {},
+      "address": "0xefd425B44ed72fD3F7829007214Ba4907BFAF4D5",
+      "transactionHash": "0x05d0481cde0ce4d2e941f33402bbacb9b3730bab3b760dbbdb87f8eabfff119b"
+    },
+    "1604063952400": {
+      "events": {},
+      "links": {},
+      "address": "0x3be60Ca05feFafAD11610A5Cd4A098b584709750",
+      "transactionHash": "0xb2d90717002679c3a2261c70e0bd92768810067c572d4722949f43be09225053"
+    },
+    "1604309687217": {
+      "events": {},
+      "links": {},
+      "address": "0xf5513bc073A86394a0Fa26F11318D5D30AeAf550",
+      "transactionHash": "0x4eac53936e6d2c8ef876d0a919056b50a9723beb7a14fb88fcb6f0c7160a6bb4"
+    },
+    "1604580150388": {
+      "events": {},
+      "links": {},
+      "address": "0xEDa86A421246c62dA854f8E430616dA7C6e5fE2e",
+      "transactionHash": "0xd1ea9fef17c32d3ab06142e57ba66c6a5ba647fc640323527289d7ff8cdf51a9"
+    },
+    "1604586943021": {
+      "events": {},
+      "links": {},
+      "address": "0xf75f0a63258DB7b3336d05010f155B3C8b8201b1",
+      "transactionHash": "0x739958f15e89773abc58db2f90994c0ab1855fd1b4dd33c1782602609bf75fa2"
+    },
+    "1604591985792": {
+      "events": {},
+      "links": {},
+      "address": "0x4fF87E014E337Ce4E286C838436391950d5049C3",
+      "transactionHash": "0x9c291f942a575ae7a262e1fb6a782ca7f467f8412036552b0ded1e997aaaf9c0"
+    },
+    "1604595343545": {
+      "events": {},
+      "links": {},
+      "address": "0x2B14C9e44FB27A411D797be558A7aA28Fa29DdEa",
+      "transactionHash": "0x58b4daacd171152bed438303a30971268657a5b616beea2de8f034e5d0487f23"
+    },
+    "1605011491503": {
+      "events": {},
+      "links": {},
+      "address": "0xA725A297b0F81c502df772DBE2D0AEb68788679d",
+      "transactionHash": "0x3cdc5dcc6f252d7c101b31389c0b027525c0fa17f1282fb6b4ac7f1213b81b2b"
+    },
+    "1605018712296": {
+      "events": {},
+      "links": {},
+      "address": "0xA725A297b0F81c502df772DBE2D0AEb68788679d",
+      "transactionHash": "0x3cdc5dcc6f252d7c101b31389c0b027525c0fa17f1282fb6b4ac7f1213b81b2b"
     }
   },
   "schemaVersion": "3.3.0",
-  "updatedAt": "2020-10-19T09:04:40.496Z",
+  "updatedAt": "2020-11-10T14:32:24.009Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {
