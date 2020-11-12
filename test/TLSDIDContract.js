@@ -12,7 +12,6 @@ contract('TLSDIDContract', (accounts) => {
       from: accounts[0],
     });
     const expiry = await tlsdidContract.expiry.call();
-    console.log(expiry);
     assert.equal(expiry, expiryDate, 'Signature was not added to contract');
   });
 
