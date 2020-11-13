@@ -13,9 +13,9 @@
     "ganache-cli": "^6.12.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/truffle test",
-    "deploy": "./node_modules/.bin/truffle migrate",
-    "deploy-registry": "./node_modules/.bin/truffle migrate -f 3 --to 3"
+    "test": "npx truffle test",
+    "deploy": "npx truffle migrate",
+    "deploy-registry": "npx truffle migrate -f 3 --to 3"
   },
   "repository": {
     "type": "git",
