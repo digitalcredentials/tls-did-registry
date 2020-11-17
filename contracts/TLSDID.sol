@@ -23,18 +23,27 @@ contract TLSDID {
         _;
     }
 
+    /// @notice Sets TLS DID domain
+    /// @param _domain The TLS DID domain
     function setDomain(string calldata _domain) external onlyOwner {
         domain = _domain;
     }
 
+    /// @notice Sets TLS DID Contract expiry
+    /// @param _expiry The TLS DID Contract expiry
     function setExpiry(uint64 _expiry) external onlyOwner {
         expiry = _expiry;
     }
 
+    /// @notice Sets TLS DID Contract signature
+    /// @param _signature The TLS DID Contract signature
     function setSignature(string calldata _signature) external onlyOwner {
         signature = _signature;
     }
 
+    /// @notice Adds attribute to DID Document
+    /// @param _path The path to the attribute. Exp. parent/child or parent[]/child
+    /// @param _value The value of the attribute
     function addAttribute(string calldata _path, string calldata _value)
         external
         onlyOwner
@@ -42,10 +51,13 @@ contract TLSDID {
         attributes.push(Attribute(_path, _value));
     }
 
+    /// @notice Gets the count of attributes
     function getAttributeCount() external view returns (uint256) {
         return attributes.length;
     }
 
+    /// @notice Gets attribute at index
+    /// @param index The index of the attribute
     function getAttribute(uint256 index)
         external
         view
