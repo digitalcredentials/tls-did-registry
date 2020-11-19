@@ -57,14 +57,14 @@ contract TLSDID {
     }
 
     /// @notice Gets attribute at index
-    /// @param index The index of the attribute
-    function getAttribute(uint256 index)
+    /// @param _index The index of the attribute
+    function getAttribute(uint256 _index)
         external
         view
         returns (string memory, string memory)
     {
-        string memory path = attributes[index].path;
-        string memory value = attributes[index].value;
+        string memory path = attributes[_index].path;
+        string memory value = attributes[_index].value;
         return (path, value);
     }
 }
