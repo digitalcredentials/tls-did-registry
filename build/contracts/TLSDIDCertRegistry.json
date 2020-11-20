@@ -1,0 +1,1473 @@
+{
+  "contractName": "TLSDIDCertRegistry",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_domain",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_cert",
+          "type": "string"
+        }
+      ],
+      "name": "addCert",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_domain",
+          "type": "string"
+        }
+      ],
+      "name": "getCertCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_domain",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getCert",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_domain\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_cert\",\"type\":\"string\"}],\"name\":\"addCert\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_domain\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_index\",\"type\":\"uint256\"}],\"name\":\"getCert\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_domain\",\"type\":\"string\"}],\"name\":\"getCertCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"addCert(string,string)\":{\"details\":\"The addresses are stored in an array to make sure an existing mapping can not be overwriten.\",\"params\":{\"_cert\":\"The certificate to be stored\",\"_domain\":\"The domain for which a certificate is stored\"}},\"getCert(string,uint256)\":{\"params\":{\"_domain\":\"The domain mapping to the certificates\",\"_index\":\"The index of the certificate\"}},\"getCertCount(string)\":{\"params\":{\"_domain\":\"The domain mapping to the certificates\"}}}},\"userdoc\":{\"methods\":{\"addCert(string,string)\":{\"notice\":\"Store mapping from DID to SC address\"},\"getCert(string,uint256)\":{\"notice\":\"Gets certificate at index\"},\"getCertCount(string)\":{\"notice\":\"Returns the number of certificates stored for the domain\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/kilian/Documents/tls-did-project/tls-did-registry/contracts/TLSDIDCertRegistry.sol\":\"TLSDIDCertRegistry\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/kilian/Documents/tls-did-project/tls-did-registry/contracts/TLSDIDCertRegistry.sol\":{\"keccak256\":\"0x07b15fdcd68c725ead08b726346ac4785de1ccdfe552c3d739c1a7b3516bdfd4\",\"urls\":[\"bzz-raw://dfbd0141af41255e3198954d52e58aa2e0cb22af1256c02d2df3e000f062cb2d\",\"dweb:/ipfs/QmbzQiMTgYL3n36cyVFzpoJa4uS4Y8eMKPCLpZow3VLaqx\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610542806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80634100af0f1461004657806346baccf814610142578063c362cbf4146101cf575b600080fd5b6100c76004803603604081101561005c57600080fd5b810190808035906020019064010000000081111561007957600080fd5b82018360208201111561008b57600080fd5b803590602001918460018302840111640100000000831117156100ad57600080fd5b90919293919293908035906020019092919050505061029d565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101075780820151818401526020810190506100ec565b50505050905090810190601f1680156101345780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101b96004803603602081101561015857600080fd5b810190808035906020019064010000000081111561017557600080fd5b82018360208201111561018757600080fd5b803590602001918460018302840111640100000000831117156101a957600080fd5b90919293919293905050506103c7565b6040518082815260200191505060405180910390f35b61029b600480360360408110156101e557600080fd5b810190808035906020019064010000000081111561020257600080fd5b82018360208201111561021457600080fd5b8035906020019184600183028401116401000000008311171561023657600080fd5b90919293919293908035906020019064010000000081111561025757600080fd5b82018360208201111561026957600080fd5b8035906020019184600183028401116401000000008311171561028b57600080fd5b90919293919293905050506103fb565b005b606080600085856040518083838082843780830192505050925050509081526020016040518091039020805480602002602001604051908101604052809291908181526020016000905b828210156103a3578382906000526020600020018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561038f5780601f106103645761010080835404028352916020019161038f565b820191906000526020600020905b81548152906001019060200180831161037257829003601f168201915b5050505050815260200190600101906102e7565b5050505090508083815181106103b557fe5b60200260200101519150509392505050565b6000808383604051808383808284378083019250505092505050908152602001604051809103902080549050905092915050565b600084846040518083838082843780830192505050925050509081526020016040518091039020828290918060018154018082558091505090600182039060005260206000200160009091929390919293909192909192509190610460929190610468565b505050505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106104a957803560ff19168380011785556104d7565b828001600101855582156104d7579182015b828111156104d65782358255916020019190600101906104bb565b5b5090506104e491906104e8565b5090565b61050a91905b808211156105065760008160009055506001016104ee565b5090565b9056fea265627a7a72315820f600c024ceb888ffdab1dc121ebbb8a8406cf50ecf35daa676355babb2f1b08d64736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80634100af0f1461004657806346baccf814610142578063c362cbf4146101cf575b600080fd5b6100c76004803603604081101561005c57600080fd5b810190808035906020019064010000000081111561007957600080fd5b82018360208201111561008b57600080fd5b803590602001918460018302840111640100000000831117156100ad57600080fd5b90919293919293908035906020019092919050505061029d565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156101075780820151818401526020810190506100ec565b50505050905090810190601f1680156101345780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101b96004803603602081101561015857600080fd5b810190808035906020019064010000000081111561017557600080fd5b82018360208201111561018757600080fd5b803590602001918460018302840111640100000000831117156101a957600080fd5b90919293919293905050506103c7565b6040518082815260200191505060405180910390f35b61029b600480360360408110156101e557600080fd5b810190808035906020019064010000000081111561020257600080fd5b82018360208201111561021457600080fd5b8035906020019184600183028401116401000000008311171561023657600080fd5b90919293919293908035906020019064010000000081111561025757600080fd5b82018360208201111561026957600080fd5b8035906020019184600183028401116401000000008311171561028b57600080fd5b90919293919293905050506103fb565b005b606080600085856040518083838082843780830192505050925050509081526020016040518091039020805480602002602001604051908101604052809291908181526020016000905b828210156103a3578382906000526020600020018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561038f5780601f106103645761010080835404028352916020019161038f565b820191906000526020600020905b81548152906001019060200180831161037257829003601f168201915b5050505050815260200190600101906102e7565b5050505090508083815181106103b557fe5b60200260200101519150509392505050565b6000808383604051808383808284378083019250505092505050908152602001604051809103902080549050905092915050565b600084846040518083838082843780830192505050925050509081526020016040518091039020828290918060018154018082558091505090600182039060005260206000200160009091929390919293909192909192509190610460929190610468565b505050505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106104a957803560ff19168380011785556104d7565b828001600101855582156104d7579182015b828111156104d65782358255916020019190600101906104bb565b5b5090506104e491906104e8565b5090565b61050a91905b808211156105065760008160009055506001016104ee565b5090565b9056fea265627a7a72315820f600c024ceb888ffdab1dc121ebbb8a8406cf50ecf35daa676355babb2f1b08d64736f6c63430005100032",
+  "sourceMap": "73:1188:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;73:1188:2;;;;;;;",
+  "deployedSourceMap": "73:1188:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;73:1188:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1047:212;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1047:212:2;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;1047:212:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;1047:212:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;1047:212:2;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1047:212:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;731:155;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;731:155:2;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;731:155:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;731:155:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;731:155:2;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;470:120;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;470:120:2;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;470:120:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;470:120:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;470:120:2;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;470:120:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;470:120:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;470:120:2;;;;;;;;;;;;:::i;:::-;;1047:212;1152:13;1181:21;1205:8;1214:7;;1205:17;;;;;30:3:-1;22:6;14;1:33;57:3;49:6;45:16;35:26;;1205:17:2;;;;;;;;;;;;;;;;;;1181:41;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1239:5;1245:6;1239:13;;;;;;;;;;;;;;1232:20;;;1047:212;;;;;:::o;731:155::-;825:7;855:8;864:7;;855:17;;;;;30:3:-1;22:6;14;1:33;57:3;49:6;45:16;35:26;;855:17:2;;;;;;;;;;;;;;;;;;:24;;;;848:31;;731:155;;;;:::o;470:120::-;554:8;563:7;;554:17;;;;;30:3:-1;22:6;14;1:33;57:3;49:6;45:16;35:26;;554:17:2;;;;;;;;;;;;;;;;;;577:5;;554:29;;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;554:29:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;470:120;;;;:::o;73:1188::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity >=0.4.22 <0.8.0;\n\ncontract TLSDIDCertRegistry {\n    // Maps domain to stored certs\n    mapping(string => string[]) private registry;\n\n    /// @notice Store mapping from DID to SC address\n    /// @dev The addresses are stored in an array to make sure an existing mapping can not be overwriten.\n    /// @param _domain The domain for which a certificate is stored\n    /// @param _cert The certificate to be stored\n    function addCert(string calldata _domain, string calldata _cert) external {\n        registry[_domain].push(_cert);\n    }\n\n    /// @notice Returns the number of certificates stored for the domain\n    /// @param _domain The domain mapping to the certificates\n    function getCertCount(string calldata _domain)\n        external\n        view\n        returns (uint256)\n    {\n        return registry[_domain].length;\n    }\n\n    /// @notice Gets certificate at index\n    /// @param _domain The domain mapping to the certificates\n    /// @param _index The index of the certificate\n    function getCert(string calldata _domain, uint256 _index)\n        external\n        view\n        returns (string memory)\n    {\n        string[] memory certs = registry[_domain];\n        return certs[_index];\n    }\n}\n",
+  "sourcePath": "/Users/kilian/Documents/tls-did-project/tls-did-registry/contracts/TLSDIDCertRegistry.sol",
+  "ast": {
+    "absolutePath": "/Users/kilian/Documents/tls-did-project/tls-did-registry/contracts/TLSDIDCertRegistry.sol",
+    "exportedSymbols": {
+      "TLSDIDCertRegistry": [
+        223
+      ]
+    },
+    "id": 224,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 167,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:32:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 223,
+        "linearizedBaseContracts": [
+          223
+        ],
+        "name": "TLSDIDCertRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 172,
+            "name": "registry",
+            "nodeType": "VariableDeclaration",
+            "scope": 223,
+            "src": "142:44:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_string_storage_$dyn_storage_$",
+              "typeString": "mapping(string => string[])"
+            },
+            "typeName": {
+              "id": 171,
+              "keyType": {
+                "id": 168,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "150:6:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "142:27:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_string_storage_$dyn_storage_$",
+                "typeString": "mapping(string => string[])"
+              },
+              "valueType": {
+                "baseType": {
+                  "id": 169,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "160:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "id": 170,
+                "length": null,
+                "nodeType": "ArrayTypeName",
+                "src": "160:8:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                  "typeString": "string[]"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 186,
+              "nodeType": "Block",
+              "src": "544:46:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 183,
+                        "name": "_cert",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 176,
+                        "src": "577:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 179,
+                          "name": "registry",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 172,
+                          "src": "554:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_string_storage_$dyn_storage_$",
+                            "typeString": "mapping(string memory => string storage ref[] storage ref)"
+                          }
+                        },
+                        "id": 181,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 180,
+                          "name": "_domain",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 174,
+                          "src": "563:7:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_calldata_ptr",
+                            "typeString": "string calldata"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "554:17:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                          "typeString": "string storage ref[] storage ref"
+                        }
+                      },
+                      "id": 182,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "554:22:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_string_storage_$returns$_t_uint256_$",
+                        "typeString": "function (string storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 184,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "554:29:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 185,
+                  "nodeType": "ExpressionStatement",
+                  "src": "554:29:2"
+                }
+              ]
+            },
+            "documentation": "@notice Store mapping from DID to SC address\n @dev The addresses are stored in an array to make sure an existing mapping can not be overwriten.\n @param _domain The domain for which a certificate is stored\n @param _cert The certificate to be stored",
+            "id": 187,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addCert",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 177,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 174,
+                  "name": "_domain",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 187,
+                  "src": "487:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 173,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "487:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 176,
+                  "name": "_cert",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 187,
+                  "src": "512:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 175,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "512:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "486:48:2"
+            },
+            "returnParameters": {
+              "id": 178,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "544:0:2"
+            },
+            "scope": 223,
+            "src": "470:120:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 199,
+              "nodeType": "Block",
+              "src": "838:48:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 194,
+                        "name": "registry",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 172,
+                        "src": "855:8:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_string_storage_$dyn_storage_$",
+                          "typeString": "mapping(string memory => string storage ref[] storage ref)"
+                        }
+                      },
+                      "id": 196,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 195,
+                        "name": "_domain",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 189,
+                        "src": "864:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "855:17:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                        "typeString": "string storage ref[] storage ref"
+                      }
+                    },
+                    "id": 197,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "855:24:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 193,
+                  "id": 198,
+                  "nodeType": "Return",
+                  "src": "848:31:2"
+                }
+              ]
+            },
+            "documentation": "@notice Returns the number of certificates stored for the domain\n @param _domain The domain mapping to the certificates",
+            "id": 200,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCertCount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 190,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 189,
+                  "name": "_domain",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 200,
+                  "src": "753:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 188,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "753:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "752:25:2"
+            },
+            "returnParameters": {
+              "id": 193,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 192,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 200,
+                  "src": "825:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 191,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "825:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "824:9:2"
+            },
+            "scope": 223,
+            "src": "731:155:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 221,
+              "nodeType": "Block",
+              "src": "1171:88:2",
+              "statements": [
+                {
+                  "assignments": [
+                    212
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 212,
+                      "name": "certs",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 221,
+                      "src": "1181:21:2",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_string_memory_$dyn_memory_ptr",
+                        "typeString": "string[]"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 210,
+                          "name": "string",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1181:6:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string"
+                          }
+                        },
+                        "id": 211,
+                        "length": null,
+                        "nodeType": "ArrayTypeName",
+                        "src": "1181:8:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                          "typeString": "string[]"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 216,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 213,
+                      "name": "registry",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 172,
+                      "src": "1205:8:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_string_storage_$dyn_storage_$",
+                        "typeString": "mapping(string memory => string storage ref[] storage ref)"
+                      }
+                    },
+                    "id": 215,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 214,
+                      "name": "_domain",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 202,
+                      "src": "1214:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_calldata_ptr",
+                        "typeString": "string calldata"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1205:17:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                      "typeString": "string storage ref[] storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1181:41:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 217,
+                      "name": "certs",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 212,
+                      "src": "1239:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_string_memory_$dyn_memory_ptr",
+                        "typeString": "string memory[] memory"
+                      }
+                    },
+                    "id": 219,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 218,
+                      "name": "_index",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 204,
+                      "src": "1245:6:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1239:13:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "functionReturnParameters": 208,
+                  "id": 220,
+                  "nodeType": "Return",
+                  "src": "1232:20:2"
+                }
+              ]
+            },
+            "documentation": "@notice Gets certificate at index\n @param _domain The domain mapping to the certificates\n @param _index The index of the certificate",
+            "id": 222,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCert",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 205,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 202,
+                  "name": "_domain",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 222,
+                  "src": "1064:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 201,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1064:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 204,
+                  "name": "_index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 222,
+                  "src": "1089:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 203,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1089:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1063:41:2"
+            },
+            "returnParameters": {
+              "id": 208,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 207,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 222,
+                  "src": "1152:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 206,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1152:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1151:15:2"
+            },
+            "scope": 223,
+            "src": "1047:212:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 224,
+        "src": "73:1188:2"
+      }
+    ],
+    "src": "39:1223:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/kilian/Documents/tls-did-project/tls-did-registry/contracts/TLSDIDCertRegistry.sol",
+    "exportedSymbols": {
+      "TLSDIDCertRegistry": [
+        223
+      ]
+    },
+    "id": 224,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 167,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:32:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 223,
+        "linearizedBaseContracts": [
+          223
+        ],
+        "name": "TLSDIDCertRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 172,
+            "name": "registry",
+            "nodeType": "VariableDeclaration",
+            "scope": 223,
+            "src": "142:44:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_string_storage_$dyn_storage_$",
+              "typeString": "mapping(string => string[])"
+            },
+            "typeName": {
+              "id": 171,
+              "keyType": {
+                "id": 168,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "150:6:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "142:27:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_string_storage_$dyn_storage_$",
+                "typeString": "mapping(string => string[])"
+              },
+              "valueType": {
+                "baseType": {
+                  "id": 169,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "160:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "id": 170,
+                "length": null,
+                "nodeType": "ArrayTypeName",
+                "src": "160:8:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                  "typeString": "string[]"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 186,
+              "nodeType": "Block",
+              "src": "544:46:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 183,
+                        "name": "_cert",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 176,
+                        "src": "577:5:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 179,
+                          "name": "registry",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 172,
+                          "src": "554:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_string_storage_$dyn_storage_$",
+                            "typeString": "mapping(string memory => string storage ref[] storage ref)"
+                          }
+                        },
+                        "id": 181,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 180,
+                          "name": "_domain",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 174,
+                          "src": "563:7:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_calldata_ptr",
+                            "typeString": "string calldata"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "554:17:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                          "typeString": "string storage ref[] storage ref"
+                        }
+                      },
+                      "id": 182,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "554:22:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_string_storage_$returns$_t_uint256_$",
+                        "typeString": "function (string storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 184,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "554:29:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 185,
+                  "nodeType": "ExpressionStatement",
+                  "src": "554:29:2"
+                }
+              ]
+            },
+            "documentation": "@notice Store mapping from DID to SC address\n @dev The addresses are stored in an array to make sure an existing mapping can not be overwriten.\n @param _domain The domain for which a certificate is stored\n @param _cert The certificate to be stored",
+            "id": 187,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addCert",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 177,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 174,
+                  "name": "_domain",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 187,
+                  "src": "487:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 173,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "487:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 176,
+                  "name": "_cert",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 187,
+                  "src": "512:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 175,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "512:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "486:48:2"
+            },
+            "returnParameters": {
+              "id": 178,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "544:0:2"
+            },
+            "scope": 223,
+            "src": "470:120:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 199,
+              "nodeType": "Block",
+              "src": "838:48:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 194,
+                        "name": "registry",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 172,
+                        "src": "855:8:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_string_storage_$dyn_storage_$",
+                          "typeString": "mapping(string memory => string storage ref[] storage ref)"
+                        }
+                      },
+                      "id": 196,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 195,
+                        "name": "_domain",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 189,
+                        "src": "864:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_calldata_ptr",
+                          "typeString": "string calldata"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "855:17:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                        "typeString": "string storage ref[] storage ref"
+                      }
+                    },
+                    "id": 197,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "855:24:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 193,
+                  "id": 198,
+                  "nodeType": "Return",
+                  "src": "848:31:2"
+                }
+              ]
+            },
+            "documentation": "@notice Returns the number of certificates stored for the domain\n @param _domain The domain mapping to the certificates",
+            "id": 200,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCertCount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 190,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 189,
+                  "name": "_domain",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 200,
+                  "src": "753:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 188,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "753:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "752:25:2"
+            },
+            "returnParameters": {
+              "id": 193,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 192,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 200,
+                  "src": "825:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 191,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "825:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "824:9:2"
+            },
+            "scope": 223,
+            "src": "731:155:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 221,
+              "nodeType": "Block",
+              "src": "1171:88:2",
+              "statements": [
+                {
+                  "assignments": [
+                    212
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 212,
+                      "name": "certs",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 221,
+                      "src": "1181:21:2",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_string_memory_$dyn_memory_ptr",
+                        "typeString": "string[]"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 210,
+                          "name": "string",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1181:6:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string"
+                          }
+                        },
+                        "id": 211,
+                        "length": null,
+                        "nodeType": "ArrayTypeName",
+                        "src": "1181:8:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                          "typeString": "string[]"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 216,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 213,
+                      "name": "registry",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 172,
+                      "src": "1205:8:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_string_storage_$dyn_storage_$",
+                        "typeString": "mapping(string memory => string storage ref[] storage ref)"
+                      }
+                    },
+                    "id": 215,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 214,
+                      "name": "_domain",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 202,
+                      "src": "1214:7:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_calldata_ptr",
+                        "typeString": "string calldata"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1205:17:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                      "typeString": "string storage ref[] storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1181:41:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 217,
+                      "name": "certs",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 212,
+                      "src": "1239:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_string_memory_$dyn_memory_ptr",
+                        "typeString": "string memory[] memory"
+                      }
+                    },
+                    "id": 219,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 218,
+                      "name": "_index",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 204,
+                      "src": "1245:6:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1239:13:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory",
+                      "typeString": "string memory"
+                    }
+                  },
+                  "functionReturnParameters": 208,
+                  "id": 220,
+                  "nodeType": "Return",
+                  "src": "1232:20:2"
+                }
+              ]
+            },
+            "documentation": "@notice Gets certificate at index\n @param _domain The domain mapping to the certificates\n @param _index The index of the certificate",
+            "id": 222,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCert",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 205,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 202,
+                  "name": "_domain",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 222,
+                  "src": "1064:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 201,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1064:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 204,
+                  "name": "_index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 222,
+                  "src": "1089:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 203,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1089:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1063:41:2"
+            },
+            "returnParameters": {
+              "id": 208,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 207,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 222,
+                  "src": "1152:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 206,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1152:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1151:15:2"
+            },
+            "scope": 223,
+            "src": "1047:212:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 224,
+        "src": "73:1188:2"
+      }
+    ],
+    "src": "39:1223:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.0",
+  "updatedAt": "2020-11-20T11:19:56.350Z",
+  "devdoc": {
+    "methods": {
+      "addCert(string,string)": {
+        "details": "The addresses are stored in an array to make sure an existing mapping can not be overwriten.",
+        "params": {
+          "_cert": "The certificate to be stored",
+          "_domain": "The domain for which a certificate is stored"
+        }
+      },
+      "getCert(string,uint256)": {
+        "params": {
+          "_domain": "The domain mapping to the certificates",
+          "_index": "The index of the certificate"
+        }
+      },
+      "getCertCount(string)": {
+        "params": {
+          "_domain": "The domain mapping to the certificates"
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "addCert(string,string)": {
+        "notice": "Store mapping from DID to SC address"
+      },
+      "getCert(string,uint256)": {
+        "notice": "Gets certificate at index"
+      },
+      "getCertCount(string)": {
+        "notice": "Returns the number of certificates stored for the domain"
+      }
+    }
+  }
+}
