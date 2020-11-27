@@ -3,6 +3,9 @@ const TLSDIDRegistry = artifacts.require('TLSDIDRegistry');
 
 module.exports = function (deployer) {
   deployer.deploy(TLSDIDRegistry).then(() => {
-    contractRegistryService.storeRegistryAddress(TLSDIDRegistry.address);
+    contractRegistryService.storeRegistryAddress(
+      'registryAddress',
+      TLSDIDRegistry.address
+    );
   });
 };

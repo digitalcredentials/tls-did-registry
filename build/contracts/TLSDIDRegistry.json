@@ -1734,10 +1734,23 @@
       "links": {},
       "address": "0xA725A297b0F81c502df772DBE2D0AEb68788679d",
       "transactionHash": "0x3cdc5dcc6f252d7c101b31389c0b027525c0fa17f1282fb6b4ac7f1213b81b2b"
+    },
+    "1605866619000": {
+      "events": {},
+      "links": {},
+      "address": "0x71f6d9aCc053c97d1FAb584e89fDcef27bD1a3A5",
+      "transactionHash": "0x4ce5da63f4503e458b76fb749d2e9dba2e57e0c2647ab2cd8107bbaa4b03e07c"
+    },
+    "1606470509450": {
+      "events": {},
+      "links": {},
+      "address": "0x2E591D9655c1fBd4A1f3d4F3414BC097AC6c24a0",
+      "transactionHash": "0x98bd5759ddb400fc6839f1587f9acf7092f0081c88aa223bd9bc1d7b12b8e984"
     }
   },
   "schemaVersion": "3.3.0",
-  "updatedAt": "2020-11-20T11:19:56.352Z",
+  "updatedAt": "2020-11-27T14:33:33.283Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {
       "getContracts(string)": {

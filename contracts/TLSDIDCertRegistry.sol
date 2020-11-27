@@ -2,20 +2,22 @@
 pragma solidity >=0.4.22 <0.8.0;
 
 contract TLSDIDCertRegistry {
-    // Maps domain to stored certs
+    // Maps domain to aggregated certificate chain
     mapping(string => string[]) private registry;
 
-    /// @notice Store mapping from DID to SC address
+    /// @notice Store mapping from domain to aggregated certificate chain
     /// @dev The addresses are stored in an array to make sure an existing mapping can not be overwriten.
-    /// @param _domain The domain for which a certificate is stored
-    /// @param _cert The certificate to be stored
-    function addCert(string calldata _domain, string calldata _cert) external {
-        registry[_domain].push(_cert);
+    /// @param _domain The domain mapping to the certificates
+    /// @param _chain The aggregated certificate chain to be stored
+    function addChain(string calldata _domain, string calldata _chain)
+        external
+    {
+        registry[_domain].push(_chain);
     }
 
-    /// @notice Returns the number of certificates stored for the domain
+    /// @notice Returns the number of aggregated certificate chains stored for the domain
     /// @param _domain The domain mapping to the certificates
-    function getCertCount(string calldata _domain)
+    function getChainCount(string calldata _domain)
         external
         view
         returns (uint256)
@@ -23,15 +25,15 @@ contract TLSDIDCertRegistry {
         return registry[_domain].length;
     }
 
-    /// @notice Gets certificate at index
+    /// @notice Gets the aggregated certificates at index
     /// @param _domain The domain mapping to the certificates
-    /// @param _index The index of the certificate
-    function getCert(string calldata _domain, uint256 _index)
+    /// @param _index The index of the aggregated certificates
+    function getChain(string calldata _domain, uint256 _index)
         external
         view
         returns (string memory)
     {
-        string[] memory certs = registry[_domain];
-        return certs[_index];
+        string[] memory chains = registry[_domain];
+        return chains[_index];
     }
 }
