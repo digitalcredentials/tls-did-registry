@@ -9,6 +9,8 @@ contract TLSDID {
 
     Attribute[] public attributes;
 
+    string[] public chains;
+
     constructor() public {
         owner = msg.sender;
     }
@@ -66,5 +68,23 @@ contract TLSDID {
         string memory path = attributes[_index].path;
         string memory value = attributes[_index].value;
         return (path, value);
+    }
+
+    /// @notice Store certificate chain
+    /// @dev The chains are stored in an array to allow access to old chains.
+    /// @param _chain The certificate chain to be stored
+    function addChain(string calldata _chain) external {
+        chains.push(_chain);
+    }
+
+    /// @notice Returns the number of certificate chains stored
+    function getChainCount() external view returns (uint256) {
+        return chains.length;
+    }
+
+    /// @notice Gets the certificate chain at index
+    /// @param _index The index of the certificate chain
+    function getChain(uint256 _index) external view returns (string memory) {
+        return chains[_index];
     }
 }

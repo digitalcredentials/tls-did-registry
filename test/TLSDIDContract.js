@@ -64,4 +64,38 @@ contract('TLSDIDContract', (accounts) => {
       'Attribute value was not added to contract'
     );
   });
+
+  //Cert Chain
+
+  it('should return 0 as cert count', async () => {
+    let certCount = await tlsdidContract.getChainCount();
+
+    assert.equal(certCount.toNumber(), 0, 'Response was not zero');
+  });
+
+  it('should add certificate', async () => {
+    let ChainA = 'ChainA';
+    await tlsdidContract.addChain(ChainA);
+
+    let certCount = await tlsdidContract.getChainCount();
+    assert.equal(certCount.toNumber(), 1, 'Cert count was not 1');
+
+    let _ChainA = await tlsdidContract.getChain(0);
+    assert.equal(_ChainA, ChainA, 'Retriced cert was not equal to added cert');
+  });
+
+  it('should add additional certificate', async () => {
+    let ChainA = 'ChainA';
+    let ChainB = 'ChainB';
+    await tlsdidContract.addChain(ChainB);
+
+    let certCount = await tlsdidContract.getChainCount();
+    assert.equal(certCount.toNumber(), 2, 'Cert count was not 2');
+
+    let _ChainA = await tlsdidContract.getChain(0);
+    assert.equal(_ChainA, ChainA, 'Retriced cert was not equal to added cert');
+
+    let _ChainB = await tlsdidContract.getChain(1);
+    assert.equal(_ChainB, ChainB, 'Retriced cert was not equal to added cert');
+  });
 });

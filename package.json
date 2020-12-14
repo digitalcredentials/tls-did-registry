@@ -16,8 +16,7 @@
     "test": "npx truffle test",
     "build": "npx truffle build",
     "deploy": "npx truffle migrate",
-    "deploy-registry": "npx truffle migrate -f 3 --to 3",
-    "deploy-cert-registry": "npx truffle migrate -f 4 --to 4"
+    "deploy-registry": "npx truffle migrate -f 3 --to 3"
   },
   "repository": {
     "type": "git",
