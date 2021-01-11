@@ -9,8 +9,8 @@
   "dependencies": {},
   "devDependencies": {
     "eth-gas-reporter": "^0.2.17",
-    "truffle": "^5.1.48",
-    "ganache-cli": "^6.12.0"
+    "ganache-cli": "^6.12.0",
+    "truffle": "^5.1.48"
   },
   "scripts": {
     "test": "npx truffle test",

@@ -2,10 +2,13 @@
 pragma solidity >=0.4.22 <0.8.0;
 
 contract TLSDIDRegistry {
-    //TODO rename | evaluate if we solve this with events
+    /// contained is slightly hacky. We store the existance of an SC address
+    /// and the index of the SC address in AddressContainer.contained[SC address]
+    /// if it equals 0 no address is stored, if > an address is stored
+    /// and its index is i - 1
     struct AddressContainer {
         address[] addresses;
-        mapping(address => bool) contained;
+        mapping(address => uint256) contained;
     }
 
     mapping(string => AddressContainer) private registry;
@@ -16,9 +19,9 @@ contract TLSDIDRegistry {
     /// @param _address The address of the SC
     function registerContract(string calldata _id, address _address) external {
         AddressContainer storage container = registry[_id];
-        if (!container.contained[_address]) {
+        if (container.contained[_address] == 0) {
             container.addresses.push(_address);
-            container.contained[_address] = true;
+            container.contained[_address] = container.addresses.length;
         }
     }
 
@@ -31,5 +34,19 @@ contract TLSDIDRegistry {
         returns (address[] memory)
     {
         return registry[_id].addresses;
+    }
+
+    /// @notice Removes the SC addresses stored for a DID
+    /// @dev This is hacky. We store the existance of an SC address
+    /// and the index of the SC address in container.contained[SC address]
+    /// if it equals 0 no address is stored, if > an address is stored
+    /// and its index is i - 1
+    /// @param _id The TLS DID Method specific id
+    function removeContract(string calldata _id) external {
+        AddressContainer storage container = registry[_id];
+        if (container.contained[msg.sender] > 0) {
+            delete container.addresses[container.contained[msg.sender] - 1];
+            container.contained[msg.sender] = 0;
+        }
     }
 }

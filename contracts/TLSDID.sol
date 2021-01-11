@@ -2,7 +2,7 @@
 pragma solidity >=0.4.22 <0.8.0;
 
 contract TLSDID {
-    address private owner = msg.sender;
+    address payable private owner = msg.sender;
     string public domain;
     uint64 public expiry;
     string public signature;
@@ -87,4 +87,17 @@ contract TLSDID {
     function getChain(uint256 _index) external view returns (string memory) {
         return chains[_index];
     }
+
+    /// @notice Removes the reference to this contract from registry
+    /// and deletes contract
+    /// @param _RegistryAddress The address of the registry
+    function remove(address _RegistryAddress) external onlyOwner {
+        TLSDIDRegistry registry = TLSDIDRegistry(_RegistryAddress);
+        registry.removeContract(domain);
+        selfdestruct(owner);
+    }
+}
+
+interface TLSDIDRegistry {
+    function removeContract(string calldata _id) external;
 }
