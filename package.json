@@ -1,5 +1,5 @@
 {
-  "name": "tls-did-registry",
+  "name": "@digitalcredentials/tls-did-registry",
   "version": "0.1.0",
   "description": "",
   "main": "truffle-config.js",
