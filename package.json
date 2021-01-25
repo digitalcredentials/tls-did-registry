@@ -6,7 +6,9 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "np": "^7.2.0"
+  },
   "devDependencies": {
     "eth-gas-reporter": "^0.2.17",
     "ganache-cli": "^6.12.0",
@@ -16,7 +18,8 @@
     "test": "npx truffle test",
     "build": "npx truffle build",
     "deploy": "npx truffle migrate",
-    "deploy-registry": "npx truffle migrate -f 3 --to 3"
+    "deploy-registry": "npx truffle migrate -f 3 --to 3",
+    "release": "np"
   },
   "repository": {
     "type": "git",
