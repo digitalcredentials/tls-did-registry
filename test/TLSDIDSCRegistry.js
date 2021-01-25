@@ -71,9 +71,8 @@ contract('TLSDIDContract', (accounts) => {
     _addresses = await tlsdidContractRegistry.getContracts(
       'did:tls:example.org'
     );
-    console.log(_addresses);
 
-    //TODO strange behaviour on assetion of array and string
+    //TODO strange behaviour on assertion of array and string
     assert.deepEqual(
       _addresses,
       [
@@ -93,9 +92,7 @@ contract('TLSDIDContract', (accounts) => {
       'did:tls:example.org'
     );
 
-    console.log(_addresses);
-
-    //TODO strange behaviour on assetion of array and string
+    //TODO strange behaviour on assertion of array and string
     assert.deepEqual(
       _addresses,
       [
