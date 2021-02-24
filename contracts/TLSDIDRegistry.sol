@@ -14,7 +14,7 @@ contract TLSDIDRegistry {
     mapping(string => AddressContainer) private registry;
 
     /// @notice Store mapping from DID to SC address
-    /// @dev The addresses are stored in an array to make sure an existing mapping can not be overwriten.
+    /// @dev The addresses are stored in an array to make sure an existing mapping can not be overwritten.
     /// @param _id The TLS DID Method specific id for which a contract is stored
     /// @param _address The address of the SC
     function registerContract(string calldata _id, address _address) external {
