@@ -2,7 +2,7 @@
 pragma solidity >=0.4.22 <0.8.0;
 
 contract TLSDIDRegistry {
-    /// contained is slightly hacky. We store the existance of an SC address
+    /// contained is slightly hacky. We store the existence of an SC address
     /// and the index of the SC address in AddressContainer.contained[SC address]
     /// if it equals 0 no address is stored, if > an address is stored
     /// and its index is i - 1
