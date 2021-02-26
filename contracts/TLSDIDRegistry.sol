@@ -2,10 +2,9 @@
 pragma solidity >=0.4.22 <0.8.0;
 
 contract TLSDIDRegistry {
-    /// contained is slightly hacky. We store the existence of an SC address
-    /// and the index of the SC address in AddressContainer.contained[SC address]
-    /// if it equals 0 no address is stored, if > an address is stored
-    /// and its index is i - 1
+    /// Contained stores where and if a address is contained in addresses.
+    /// if it equals 0 no address is stored, if it is > 0 an address is stored
+    /// and its index in addresses is i - 1
     struct AddressContainer {
         address[] addresses;
         mapping(address => uint256) contained;
