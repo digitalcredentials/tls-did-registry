@@ -17,7 +17,7 @@
     "build": "npx truffle build",
     "deploy": "npx truffle migrate",
     "deploy-registry": "npx truffle migrate -f 3 --to 3",
-    "release": "np"
+    "release": "npm run build & np"
   },
   "repository": {
     "type": "git",
