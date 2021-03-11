@@ -3407,10 +3407,17 @@
       "links": {},
       "address": "0x2B14C9e44FB27A411D797be558A7aA28Fa29DdEa",
       "transactionHash": "0xe3c26497d0c60eaca5936ebde76fdbe7fa8d4e175253a9992d7108819ef2e5a9"
+    },
+    "1615476594424": {
+      "events": {},
+      "links": {},
+      "address": "0x2B14C9e44FB27A411D797be558A7aA28Fa29DdEa",
+      "transactionHash": "0xe3c26497d0c60eaca5936ebde76fdbe7fa8d4e175253a9992d7108819ef2e5a9"
     }
   },
   "schemaVersion": "3.3.3",
-  "updatedAt": "2021-03-11T12:14:44.027Z",
+  "updatedAt": "2021-03-11T15:30:11.683Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {
       "getContracts(string)": {

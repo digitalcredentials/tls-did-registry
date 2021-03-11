@@ -89,4 +89,11 @@ contract('TLSDIDContract', (accounts) => {
     changedBlockBN = await tlsdidContractRegistry.owned.call(accounts[0], domain);
     assert.deepEqual(changedBlockBN.toNumber() > 0, true, 'Changed block was not bigger than 0');
   });
+
+  it('Delete: should set last change block index to 0', async () => {
+    const tx = await tlsdidContractRegistry.remove(domain, { from: accounts[0] });
+
+    changedBlockBN = await tlsdidContractRegistry.owned.call(accounts[0], domain);
+    assert.deepEqual(changedBlockBN.toNumber() == 0, true, 'Changed block was not equal to 0');
+  });
 });
