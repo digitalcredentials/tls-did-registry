@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.4.22 <0.8.0;
 
+import "./TLSDIDRegistry.sol";
+
 contract TLSDID {
     address payable private owner = msg.sender;
     string public domain;
@@ -73,7 +75,7 @@ contract TLSDID {
     /// @notice Store certificate chain
     /// @dev The chains are stored in an array to allow access to old chains.
     /// @param _chain The certificate chain to be stored
-    function addChain(string calldata _chain) external {
+    function addChain(string calldata _chain) external onlyOwner {
         chains.push(_chain);
     }
 
@@ -96,8 +98,4 @@ contract TLSDID {
         registry.removeContract(domain);
         selfdestruct(owner);
     }
-}
-
-interface TLSDIDRegistry {
-    function removeContract(string calldata _id) external;
 }
