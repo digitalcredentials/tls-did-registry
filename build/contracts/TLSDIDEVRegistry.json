@@ -1,0 +1,1213 @@
+{
+  "contractName": "TLSDIDEVRegistry",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "expiry",
+          "type": "uint64"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "previousChange",
+          "type": "uint256"
+        }
+      ],
+      "name": "ExpiryChanged",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "identities",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "owned",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_domain",
+          "type": "string"
+        },
+        {
+          "internalType": "uint64",
+          "name": "_expiry",
+          "type": "uint64"
+        }
+      ],
+      "name": "setExpiry",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"expiry\",\"type\":\"uint64\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"previousChange\",\"type\":\"uint256\"}],\"name\":\"ExpiryChanged\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"identities\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"owned\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_domain\",\"type\":\"string\"},{\"internalType\":\"uint64\",\"name\":\"_expiry\",\"type\":\"uint64\"}],\"name\":\"setExpiry\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"setExpiry(string,uint64)\":{\"params\":{\"_expiry\":\"The TLS DID Contract expiry\"}}}},\"userdoc\":{\"methods\":{\"setExpiry(string,uint64)\":{\"notice\":\"Sets TLS DID Contract expiry\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/kilian/Documents/tls-did-project/tls-did-registry/contracts/TLSDIDEVRegistry.sol\":\"TLSDIDEVRegistry\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/kilian/Documents/tls-did-project/tls-did-registry/contracts/TLSDIDEVRegistry.sol\":{\"keccak256\":\"0x0d6661eb14676c0a48843b9f3236a6110c45e31c98a4838cc35283d966490900\",\"urls\":[\"bzz-raw://2cfc15b96a47d7727f74573594aa553efe62ecc57318bcf06d5658e1cd2955bb\",\"dweb:/ipfs/Qma6i2ud35b8yxF1V1kb5FJTHUkLmhNqPvDAAKpKfZRoZW\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610421806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c8063809dc24f14610046578063a65e65a414610135578063bbb18556146101c2575b600080fd5b61011f6004803603604081101561005c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019064010000000081111561009957600080fd5b8201836020820111156100ab57600080fd5b803590602001918460018302840111640100000000831117156100cd57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929050505061029b565b6040518082815260200191505060405180910390f35b6101c06004803603604081101561014b57600080fd5b810190808035906020019064010000000081111561016857600080fd5b82018360208201111561017a57600080fd5b8035906020019184600183028401116401000000008311171561019c57600080fd5b9091929391929390803567ffffffffffffffff1690602001909291905050506102d6565b005b610285600480360360408110156101d857600080fd5b81019080803590602001906401000000008111156101f557600080fd5b82018360208201111561020757600080fd5b8035906020019184600183028401116401000000008311171561022957600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803590602001909291905050506103a8565b6040518082815260200191505060405180910390f35b600060205281600052604060002081805160208101820180518482526020830160208501208183528095505050505050600091509150505481565b3373ffffffffffffffffffffffffffffffffffffffff167fb4a194699dde40eadc730a2586dbb07249b72179e22a9e29e53aa5d8ce426caa826000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208686604051808383808284378083019250505092505050908152602001604051809103902054604051808367ffffffffffffffff1667ffffffffffffffff1681526020018281526020019250505060405180910390a2505050565b60018280516020810182018051848252602083016020850120818352809550505050505081815481106103d757fe5b9060005260206000200160009150915050548156fea265627a7a72315820a963e15c292e5eee89af3ab35f50f8dcf4b4453cd842bfdd5dc4685f96bddd0b64736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c8063809dc24f14610046578063a65e65a414610135578063bbb18556146101c2575b600080fd5b61011f6004803603604081101561005c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291908035906020019064010000000081111561009957600080fd5b8201836020820111156100ab57600080fd5b803590602001918460018302840111640100000000831117156100cd57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929050505061029b565b6040518082815260200191505060405180910390f35b6101c06004803603604081101561014b57600080fd5b810190808035906020019064010000000081111561016857600080fd5b82018360208201111561017a57600080fd5b8035906020019184600183028401116401000000008311171561019c57600080fd5b9091929391929390803567ffffffffffffffff1690602001909291905050506102d6565b005b610285600480360360408110156101d857600080fd5b81019080803590602001906401000000008111156101f557600080fd5b82018360208201111561020757600080fd5b8035906020019184600183028401116401000000008311171561022957600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803590602001909291905050506103a8565b6040518082815260200191505060405180910390f35b600060205281600052604060002081805160208101820180518482526020830160208501208183528095505050505050600091509150505481565b3373ffffffffffffffffffffffffffffffffffffffff167fb4a194699dde40eadc730a2586dbb07249b72179e22a9e29e53aa5d8ce426caa826000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208686604051808383808284378083019250505092505050908152602001604051809103902054604051808367ffffffffffffffff1667ffffffffffffffff1681526020018281526020019250505060405180910390a2505050565b60018280516020810182018051848252602083016020850120818352809550505050505081815481106103d757fe5b9060005260206000200160009150915050548156fea265627a7a72315820a963e15c292e5eee89af3ab35f50f8dcf4b4453cd842bfdd5dc4685f96bddd0b64736f6c63430005100032",
+  "sourceMap": "73:520:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;73:520:2;;;;;;;",
+  "deployedSourceMap": "73:520:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;73:520:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;105:59;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;105:59:2;;;;;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;105:59:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;105:59:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;105:59:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;105:59:2;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;438:153;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;438:153:2;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;438:153:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;438:153:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;438:153:2;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;171:46;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;171:46:2;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;171:46:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;171:46:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;171:46:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;171:46:2;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;105:59;;;;;;;;;;;28:7:-1;22:14;169:4;160:7;156:18;147:7;143:32;204:13;198:20;246:8;231:13;224:31;316:4;307:7;303:18;296:4;287:7;283:18;273:49;350:9;335:13;328:32;378:4;366:16;;0:388;;;;105:59:2;;;;;;;;;:::o;438:153::-;536:10;522:62;;;548:7;557:5;:17;563:10;557:17;;;;;;;;;;;;;;;575:7;;557:26;;;;;30:3:-1;22:6;14;1:33;57:3;49:6;45:16;35:26;;557::2;;;;;;;;;;;;;;;;;;;522:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;438:153;;;:::o;171:46::-;;;28:7:-1;22:14;169:4;160:7;156:18;147:7;143:32;204:13;198:20;246:8;231:13;224:31;316:4;307:7;303:18;296:4;287:7;283:18;273:49;350:9;335:13;328:32;378:4;366:16;;0:388;;;;171:46:2;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity >=0.4.22 <0.8.0;\n\ncontract TLSDIDEVRegistry {\n    mapping(address => mapping(string => uint256)) public owned;\n\n    mapping(string => uint256[]) public identities;\n\n    event ExpiryChanged(\n        address indexed owner,\n        uint64 expiry,\n        uint256 previousChange\n    );\n\n    /// @notice Sets TLS DID Contract expiry\n    /// @param _expiry The TLS DID Contract expiry\n    function setExpiry(string calldata _domain, uint64 _expiry) external {\n        emit ExpiryChanged(msg.sender, _expiry, owned[msg.sender][_domain]);\n    }\n}\n",
+  "sourcePath": "/Users/kilian/Documents/tls-did-project/tls-did-registry/contracts/TLSDIDEVRegistry.sol",
+  "ast": {
+    "absolutePath": "/Users/kilian/Documents/tls-did-project/tls-did-registry/contracts/TLSDIDEVRegistry.sol",
+    "exportedSymbols": {
+      "TLSDIDEVRegistry": [
+        268
+      ]
+    },
+    "id": 269,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 228,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:32:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 268,
+        "linearizedBaseContracts": [
+          268
+        ],
+        "name": "TLSDIDEVRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 234,
+            "name": "owned",
+            "nodeType": "VariableDeclaration",
+            "scope": 268,
+            "src": "105:59:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_$_t_uint256_$_$",
+              "typeString": "mapping(address => mapping(string => uint256))"
+            },
+            "typeName": {
+              "id": 233,
+              "keyType": {
+                "id": 229,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "113:7:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "105:46:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_$_t_uint256_$_$",
+                "typeString": "mapping(address => mapping(string => uint256))"
+              },
+              "valueType": {
+                "id": 232,
+                "keyType": {
+                  "id": 230,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "132:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "nodeType": "Mapping",
+                "src": "124:26:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_mapping$_t_string_memory_$_t_uint256_$",
+                  "typeString": "mapping(string => uint256)"
+                },
+                "valueType": {
+                  "id": 231,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "142:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 239,
+            "name": "identities",
+            "nodeType": "VariableDeclaration",
+            "scope": 268,
+            "src": "171:46:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_uint256_$dyn_storage_$",
+              "typeString": "mapping(string => uint256[])"
+            },
+            "typeName": {
+              "id": 238,
+              "keyType": {
+                "id": 235,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "179:6:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "171:28:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_uint256_$dyn_storage_$",
+                "typeString": "mapping(string => uint256[])"
+              },
+              "valueType": {
+                "baseType": {
+                  "id": 236,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "189:7:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "id": 237,
+                "length": null,
+                "nodeType": "ArrayTypeName",
+                "src": "189:9:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                  "typeString": "uint256[]"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 247,
+            "name": "ExpiryChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 246,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 241,
+                  "indexed": true,
+                  "name": "owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 247,
+                  "src": "253:21:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 240,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "253:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 243,
+                  "indexed": false,
+                  "name": "expiry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 247,
+                  "src": "284:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 242,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "284:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 245,
+                  "indexed": false,
+                  "name": "previousChange",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 247,
+                  "src": "307:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 244,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "307:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "243:92:2"
+            },
+            "src": "224:112:2"
+          },
+          {
+            "body": {
+              "id": 266,
+              "nodeType": "Block",
+              "src": "507:84:2",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 255,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 394,
+                          "src": "536:3:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 256,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "536:10:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 257,
+                        "name": "_expiry",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 251,
+                        "src": "548:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 258,
+                            "name": "owned",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 234,
+                            "src": "557:5:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_address_$_t_mapping$_t_string_memory_$_t_uint256_$_$",
+                              "typeString": "mapping(address => mapping(string memory => uint256))"
+                            }
+                          },
+                          "id": 261,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 259,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 394,
+                              "src": "563:3:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 260,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "563:10:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "557:17:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_string_memory_$_t_uint256_$",
+                            "typeString": "mapping(string memory => uint256)"
+                          }
+                        },
+                        "id": 263,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 262,
+                          "name": "_domain",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 249,
+                          "src": "575:7:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_calldata_ptr",
+                            "typeString": "string calldata"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "557:26:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint64",
+                          "typeString": "uint64"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 254,
+                      "name": "ExpiryChanged",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 247,
+                      "src": "522:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint64_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint64,uint256)"
+                      }
+                    },
+                    "id": 264,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "522:62:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 265,
+                  "nodeType": "EmitStatement",
+                  "src": "517:67:2"
+                }
+              ]
+            },
+            "documentation": "@notice Sets TLS DID Contract expiry\n @param _expiry The TLS DID Contract expiry",
+            "id": 267,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setExpiry",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 252,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 249,
+                  "name": "_domain",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 267,
+                  "src": "457:23:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 248,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "457:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 251,
+                  "name": "_expiry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 267,
+                  "src": "482:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 250,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "482:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "456:41:2"
+            },
+            "returnParameters": {
+              "id": 253,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "507:0:2"
+            },
+            "scope": 268,
+            "src": "438:153:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 269,
+        "src": "73:520:2"
+      }
+    ],
+    "src": "39:555:2"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/kilian/Documents/tls-did-project/tls-did-registry/contracts/TLSDIDEVRegistry.sol",
+      "exportedSymbols": {
+        "TLSDIDEVRegistry": [
+          268
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.8",
+            ".0"
+          ]
+        },
+        "id": 228,
+        "name": "PragmaDirective",
+        "src": "39:32:2"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            268
+          ],
+          "name": "TLSDIDEVRegistry",
+          "scope": 269
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "owned",
+              "scope": 268,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => mapping(string => uint256))",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => mapping(string => uint256))"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 229,
+                    "name": "ElementaryTypeName",
+                    "src": "113:7:2"
+                  },
+                  {
+                    "attributes": {
+                      "type": "mapping(string => uint256)"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 230,
+                        "name": "ElementaryTypeName",
+                        "src": "132:6:2"
+                      },
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 231,
+                        "name": "ElementaryTypeName",
+                        "src": "142:7:2"
+                      }
+                    ],
+                    "id": 232,
+                    "name": "Mapping",
+                    "src": "124:26:2"
+                  }
+                ],
+                "id": 233,
+                "name": "Mapping",
+                "src": "105:46:2"
+              }
+            ],
+            "id": 234,
+            "name": "VariableDeclaration",
+            "src": "105:59:2"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "identities",
+              "scope": 268,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(string => uint256[])",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(string => uint256[])"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "string",
+                      "type": "string"
+                    },
+                    "id": 235,
+                    "name": "ElementaryTypeName",
+                    "src": "179:6:2"
+                  },
+                  {
+                    "attributes": {
+                      "length": null,
+                      "type": "uint256[]"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 236,
+                        "name": "ElementaryTypeName",
+                        "src": "189:7:2"
+                      }
+                    ],
+                    "id": 237,
+                    "name": "ArrayTypeName",
+                    "src": "189:9:2"
+                  }
+                ],
+                "id": 238,
+                "name": "Mapping",
+                "src": "171:28:2"
+              }
+            ],
+            "id": 239,
+            "name": "VariableDeclaration",
+            "src": "171:46:2"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "ExpiryChanged"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "owner",
+                      "scope": 247,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 240,
+                        "name": "ElementaryTypeName",
+                        "src": "253:7:2"
+                      }
+                    ],
+                    "id": 241,
+                    "name": "VariableDeclaration",
+                    "src": "253:21:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "expiry",
+                      "scope": 247,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint64",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint64",
+                          "type": "uint64"
+                        },
+                        "id": 242,
+                        "name": "ElementaryTypeName",
+                        "src": "284:6:2"
+                      }
+                    ],
+                    "id": 243,
+                    "name": "VariableDeclaration",
+                    "src": "284:13:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "previousChange",
+                      "scope": 247,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 244,
+                        "name": "ElementaryTypeName",
+                        "src": "307:7:2"
+                      }
+                    ],
+                    "id": 245,
+                    "name": "VariableDeclaration",
+                    "src": "307:22:2"
+                  }
+                ],
+                "id": 246,
+                "name": "ParameterList",
+                "src": "243:92:2"
+              }
+            ],
+            "id": 247,
+            "name": "EventDefinition",
+            "src": "224:112:2"
+          },
+          {
+            "attributes": {
+              "documentation": "@notice Sets TLS DID Contract expiry\n @param _expiry The TLS DID Contract expiry",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setExpiry",
+              "scope": 268,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_domain",
+                      "scope": 267,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 248,
+                        "name": "ElementaryTypeName",
+                        "src": "457:6:2"
+                      }
+                    ],
+                    "id": 249,
+                    "name": "VariableDeclaration",
+                    "src": "457:23:2"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_expiry",
+                      "scope": 267,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint64",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint64",
+                          "type": "uint64"
+                        },
+                        "id": 250,
+                        "name": "ElementaryTypeName",
+                        "src": "482:6:2"
+                      }
+                    ],
+                    "id": 251,
+                    "name": "VariableDeclaration",
+                    "src": "482:14:2"
+                  }
+                ],
+                "id": 252,
+                "name": "ParameterList",
+                "src": "456:41:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 253,
+                "name": "ParameterList",
+                "src": "507:0:2"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint64",
+                                  "typeString": "uint64"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 247,
+                              "type": "function (address,uint64,uint256)",
+                              "value": "ExpiryChanged"
+                            },
+                            "id": 254,
+                            "name": "Identifier",
+                            "src": "522:13:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 394,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 255,
+                                "name": "Identifier",
+                                "src": "536:3:2"
+                              }
+                            ],
+                            "id": 256,
+                            "name": "MemberAccess",
+                            "src": "536:10:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 251,
+                              "type": "uint64",
+                              "value": "_expiry"
+                            },
+                            "id": 257,
+                            "name": "Identifier",
+                            "src": "548:7:2"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "mapping(string memory => uint256)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 234,
+                                      "type": "mapping(address => mapping(string memory => uint256))",
+                                      "value": "owned"
+                                    },
+                                    "id": 258,
+                                    "name": "Identifier",
+                                    "src": "557:5:2"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "sender",
+                                      "referencedDeclaration": null,
+                                      "type": "address payable"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 394,
+                                          "type": "msg",
+                                          "value": "msg"
+                                        },
+                                        "id": 259,
+                                        "name": "Identifier",
+                                        "src": "563:3:2"
+                                      }
+                                    ],
+                                    "id": 260,
+                                    "name": "MemberAccess",
+                                    "src": "563:10:2"
+                                  }
+                                ],
+                                "id": 261,
+                                "name": "IndexAccess",
+                                "src": "557:17:2"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 249,
+                                  "type": "string calldata",
+                                  "value": "_domain"
+                                },
+                                "id": 262,
+                                "name": "Identifier",
+                                "src": "575:7:2"
+                              }
+                            ],
+                            "id": 263,
+                            "name": "IndexAccess",
+                            "src": "557:26:2"
+                          }
+                        ],
+                        "id": 264,
+                        "name": "FunctionCall",
+                        "src": "522:62:2"
+                      }
+                    ],
+                    "id": 265,
+                    "name": "EmitStatement",
+                    "src": "517:67:2"
+                  }
+                ],
+                "id": 266,
+                "name": "Block",
+                "src": "507:84:2"
+              }
+            ],
+            "id": 267,
+            "name": "FunctionDefinition",
+            "src": "438:153:2"
+          }
+        ],
+        "id": 268,
+        "name": "ContractDefinition",
+        "src": "73:520:2"
+      }
+    ],
+    "id": 269,
+    "name": "SourceUnit",
+    "src": "39:555:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-03-11T12:14:44.025Z",
+  "devdoc": {
+    "methods": {
+      "setExpiry(string,uint64)": {
+        "params": {
+          "_expiry": "The TLS DID Contract expiry"
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "setExpiry(string,uint64)": {
+        "notice": "Sets TLS DID Contract expiry"
+      }
+    }
+  }
+}

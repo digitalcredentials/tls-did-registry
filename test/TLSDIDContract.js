@@ -34,11 +34,7 @@ contract('TLSDIDContract', (accounts) => {
   it('should update signature in contract', async () => {
     await tlsdidContract.setSignature('signatureUpdate', { from: accounts[0] });
     signature = await tlsdidContract.signature.call();
-    assert.equal(
-      signature,
-      'signatureUpdate',
-      'Signature was not added to contract'
-    );
+    assert.equal(signature, 'signatureUpdate', 'Signature was not added to contract');
   });
 
   it('should add attribute to contract', async () => {
@@ -53,16 +49,8 @@ contract('TLSDIDContract', (accounts) => {
       attributes.push({ path, value });
     }
 
-    assert.equal(
-      attributes[0].path,
-      'parent/child',
-      'Attribute path was not added to contract'
-    );
-    assert.equal(
-      attributes[0].value,
-      'value',
-      'Attribute value was not added to contract'
-    );
+    assert.equal(attributes[0].path, 'parent/child', 'Attribute path was not added to contract');
+    assert.equal(attributes[0].value, 'value', 'Attribute value was not added to contract');
   });
 
   //Cert Chain
