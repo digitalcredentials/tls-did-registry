@@ -18,7 +18,6 @@
     "test": "npx truffle test --show-events",
     "build": "npx truffle build",
     "deploy": "npx truffle migrate",
-    "deploy-registry": "npx truffle migrate -f 3 --to 3",
     "release": "npm run build & np"
   },
   "repository": {

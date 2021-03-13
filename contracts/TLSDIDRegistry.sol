@@ -2,50 +2,57 @@
 pragma solidity >=0.4.22 <0.8.0;
 
 contract TLSDIDRegistry {
-    /// Contained stores where and if a address is contained in addresses.
-    /// if it equals 0 no address is stored, if it is > 0 an address is stored
-    /// and its index in addresses is i - 1
-    struct AddressContainer {
-        address[] addresses;
-        mapping(address => uint256) contained;
+    mapping(address => mapping(string => uint256)) public owned;
+
+    mapping(string => uint256[]) public identities;
+
+    event ExpiryChanged(address indexed owner, string domain, uint64 expiry, uint256 previousChange);
+
+    event SignatureChanged(address indexed owner, string domain, string signature, uint256 previousChange);
+
+    event AttributeChanged(address indexed owner, string domain, string path, string value, uint256 previousChange);
+
+    event ChainChanged(address indexed owner, string domain, string chain, uint256 previousChange);
+
+    /// @notice Sets TLS DID Contract expiry
+    /// @param _expiry The TLS DID Contract expiry
+    function setExpiry(string calldata _domain, uint64 _expiry) external {
+        emit ExpiryChanged(msg.sender, _domain, _expiry, owned[msg.sender][_domain]);
+        owned[msg.sender][_domain] = block.number;
     }
 
-    mapping(string => AddressContainer) private registry;
-
-    /// @notice Store mapping from DID to SC address
-    /// @dev The addresses are stored in an array to make sure an existing mapping can not be overwritten.
-    /// @param _id The TLS DID Method specific id for which a contract is stored
-    /// @param _address The address of the SC
-    function registerContract(string calldata _id, address _address) external {
-        AddressContainer storage container = registry[_id];
-        if (container.contained[_address] == 0) {
-            container.addresses.push(_address);
-            container.contained[_address] = container.addresses.length;
-        }
+    /// @notice Sets TLS DID Contract signature
+    /// @param _domain The indentifier of the TLS-DID
+    /// @param _signature The TLS DID Contract signature
+    function setSignature(string calldata _domain, string calldata _signature) external {
+        emit SignatureChanged(msg.sender, _domain, _signature, owned[msg.sender][_domain]);
+        owned[msg.sender][_domain] = block.number;
     }
 
-    /// @notice Returns the SC addresses stored for a DID
-    /// @dev If no mapping is found returns empty array
-    /// @param _id The TLS DID Method specific id for which the contract addresses are requested
-    function getContracts(string calldata _id)
-        external
-        view
-        returns (address[] memory)
-    {
-        return registry[_id].addresses;
+    /// @notice Adds attribute
+    /// @param _domain The indentifier of the TLS-DID
+    /// @param _path The path to the attribute. Exp. parent/child or parent[]/child
+    /// @param _value The value of the attribute
+    function addAttribute(
+        string calldata _domain,
+        string calldata _path,
+        string calldata _value
+    ) external {
+        emit AttributeChanged(msg.sender, _domain, _path, _value, owned[msg.sender][_domain]);
+        owned[msg.sender][_domain] = block.number;
     }
 
-    /// @notice Removes the SC addresses stored for a DID
-    /// @dev This is hacky. We store the existance of an SC address
-    /// and the index of the SC address in container.contained[SC address]
-    /// if it equals 0 no address is stored, if > an address is stored
-    /// and its index is i - 1
-    /// @param _id The TLS DID Method specific id
-    function removeContract(string calldata _id) external {
-        AddressContainer storage container = registry[_id];
-        if (container.contained[msg.sender] > 0) {
-            delete container.addresses[container.contained[msg.sender] - 1];
-            container.contained[msg.sender] = 0;
-        }
+    /// @notice Add certificate chain
+    /// @param _domain The indentifier of the TLS-DID
+    /// @param _chain The certificate chain to be stored
+    function addChain(string calldata _domain, string calldata _chain) external {
+        emit ChainChanged(msg.sender, _domain, _chain, owned[msg.sender][_domain]);
+        owned[msg.sender][_domain] = block.number;
+    }
+
+    /// @notice Resets the changed index to 0 for the domain of sender.
+    /// @param _domain The indentifier of the TLS-DID
+    function remove(string calldata _domain) external {
+        owned[msg.sender][_domain] = 0;
     }
 }
