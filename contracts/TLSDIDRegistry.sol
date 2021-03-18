@@ -2,9 +2,9 @@
 pragma solidity >=0.4.22 <0.8.0;
 
 contract TLSDIDRegistry {
-    mapping(address => mapping(string => uint256)) public owned;
+    mapping(address => mapping(string => uint256)) public changeRegistry;
 
-    mapping(string => uint256[]) public identities;
+    mapping(string => address[]) public ownershipRegistry;
 
     event ExpiryChanged(address indexed owner, string domain, uint64 expiry, uint256 previousChange);
 
@@ -14,19 +14,26 @@ contract TLSDIDRegistry {
 
     event ChainChanged(address indexed owner, string domain, string chain, uint256 previousChange);
 
+    /// @notice Sets claim of ownership over TLS-DID indentifier
+    /// @param _domain The indentifier of the TLS-DID
+    function registerOwnership(string calldata _domain) external {
+        ownershipRegistry[_domain].push(msg.sender);
+    }
+
     /// @notice Sets TLS DID Contract expiry
+    /// @param _domain The indentifier of the TLS-DID
     /// @param _expiry The TLS DID Contract expiry
     function setExpiry(string calldata _domain, uint64 _expiry) external {
-        emit ExpiryChanged(msg.sender, _domain, _expiry, owned[msg.sender][_domain]);
-        owned[msg.sender][_domain] = block.number;
+        emit ExpiryChanged(msg.sender, _domain, _expiry, changeRegistry[msg.sender][_domain]);
+        changeRegistry[msg.sender][_domain] = block.number;
     }
 
     /// @notice Sets TLS DID Contract signature
     /// @param _domain The indentifier of the TLS-DID
     /// @param _signature The TLS DID Contract signature
     function setSignature(string calldata _domain, string calldata _signature) external {
-        emit SignatureChanged(msg.sender, _domain, _signature, owned[msg.sender][_domain]);
-        owned[msg.sender][_domain] = block.number;
+        emit SignatureChanged(msg.sender, _domain, _signature, changeRegistry[msg.sender][_domain]);
+        changeRegistry[msg.sender][_domain] = block.number;
     }
 
     /// @notice Adds attribute
@@ -38,21 +45,21 @@ contract TLSDIDRegistry {
         string calldata _path,
         string calldata _value
     ) external {
-        emit AttributeChanged(msg.sender, _domain, _path, _value, owned[msg.sender][_domain]);
-        owned[msg.sender][_domain] = block.number;
+        emit AttributeChanged(msg.sender, _domain, _path, _value, changeRegistry[msg.sender][_domain]);
+        changeRegistry[msg.sender][_domain] = block.number;
     }
 
     /// @notice Add certificate chain
     /// @param _domain The indentifier of the TLS-DID
     /// @param _chain The certificate chain to be stored
     function addChain(string calldata _domain, string calldata _chain) external {
-        emit ChainChanged(msg.sender, _domain, _chain, owned[msg.sender][_domain]);
-        owned[msg.sender][_domain] = block.number;
+        emit ChainChanged(msg.sender, _domain, _chain, changeRegistry[msg.sender][_domain]);
+        changeRegistry[msg.sender][_domain] = block.number;
     }
 
     /// @notice Resets the changed index to 0 for the domain of sender.
     /// @param _domain The indentifier of the TLS-DID
     function remove(string calldata _domain) external {
-        owned[msg.sender][_domain] = 0;
+        changeRegistry[msg.sender][_domain] = 0;
     }
 }
