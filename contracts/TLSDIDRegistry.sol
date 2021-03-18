@@ -4,7 +4,7 @@ pragma solidity >=0.4.22 <0.8.0;
 contract TLSDIDRegistry {
     mapping(address => mapping(string => uint256)) public changeRegistry;
 
-    mapping(string => address[]) public ownershipRegistry;
+    mapping(string => address[]) public claimantsRegistry;
 
     event ExpiryChanged(address indexed owner, string domain, uint64 expiry, uint256 previousChange);
 
@@ -17,7 +17,11 @@ contract TLSDIDRegistry {
     /// @notice Sets claim of ownership over TLS-DID indentifier
     /// @param _domain The indentifier of the TLS-DID
     function registerOwnership(string calldata _domain) external {
-        ownershipRegistry[_domain].push(msg.sender);
+        claimantsRegistry[_domain].push(msg.sender);
+    }
+
+    function getClaimantsCount(string calldata _domain) external view returns (uint256 entityCount) {
+        return claimantsRegistry[_domain].length;
     }
 
     /// @notice Sets TLS DID Contract expiry

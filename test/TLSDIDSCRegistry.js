@@ -10,8 +10,26 @@ contract('TLSDIDRegistry', (accounts) => {
     tlsdidRegistry = await TLSDIDRegistry.deployed();
   });
 
+  it('Should return 0 for number of claimants of domain', async () => {
+    const numberClaimants = await tlsdidRegistry.getClaimantsCount(domain);
+
+    assert.deepEqual(numberClaimants.toNumber(), 0, 'Claimants was not 0');
+  });
+
+  it('Should return 1 for number of claimants of domain', async () => {
+    await tlsdidRegistry.registerOwnership(domain, {
+      from: accounts[0],
+    });
+
+    const numberClaimants = await tlsdidRegistry.getClaimantsCount(domain);
+    const claimant = await tlsdidRegistry.claimantsRegistry(domain, 0);
+
+    assert.deepEqual(numberClaimants.toNumber(), 1, 'Claimants was not 1');
+    assert.deepEqual(claimant, accounts[0], 'Claimants was not equal to account calling contract');
+  });
+
   it('Should return 0 for last block containing event', async () => {
-    changedBlockBN = await tlsdidRegistry.owned.call(accounts[0], domain);
+    changedBlockBN = await tlsdidRegistry.changeRegistry.call(accounts[0], domain);
 
     assert.deepEqual(changedBlockBN.toNumber(), 0, 'Changed block was not 0');
   });
@@ -31,7 +49,7 @@ contract('TLSDIDRegistry', (accounts) => {
       );
     });
 
-    changedBlockBN = await tlsdidRegistry.owned.call(accounts[0], domain, {
+    changedBlockBN = await tlsdidRegistry.changeRegistry.call(accounts[0], domain, {
       from: accounts[0],
     });
     assert.deepEqual(changedBlockBN.toNumber() > 0, true, 'Changed block was not bigger than 0');
@@ -50,7 +68,7 @@ contract('TLSDIDRegistry', (accounts) => {
       );
     });
 
-    changedBlockBN = await tlsdidRegistry.owned.call(accounts[0], domain);
+    changedBlockBN = await tlsdidRegistry.changeRegistry.call(accounts[0], domain);
     assert.deepEqual(changedBlockBN.toNumber() > 0, true, 'Changed block was not bigger than 0');
   });
 
@@ -69,7 +87,7 @@ contract('TLSDIDRegistry', (accounts) => {
       );
     });
 
-    changedBlockBN = await tlsdidRegistry.owned.call(accounts[0], domain);
+    changedBlockBN = await tlsdidRegistry.changeRegistry.call(accounts[0], domain);
     assert.deepEqual(changedBlockBN.toNumber() > 0, true, 'Changed block was not bigger than 0');
   });
 
@@ -86,14 +104,14 @@ contract('TLSDIDRegistry', (accounts) => {
       );
     });
 
-    changedBlockBN = await tlsdidRegistry.owned.call(accounts[0], domain);
+    changedBlockBN = await tlsdidRegistry.changeRegistry.call(accounts[0], domain);
     assert.deepEqual(changedBlockBN.toNumber() > 0, true, 'Changed block was not bigger than 0');
   });
 
   it('Delete: should set last change block index to 0', async () => {
     const tx = await tlsdidRegistry.remove(domain, { from: accounts[0] });
 
-    changedBlockBN = await tlsdidRegistry.owned.call(accounts[0], domain);
+    changedBlockBN = await tlsdidRegistry.changeRegistry.call(accounts[0], domain);
     assert.deepEqual(changedBlockBN.toNumber() == 0, true, 'Changed block was not equal to 0');
   });
 
