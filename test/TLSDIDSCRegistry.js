@@ -114,6 +114,4 @@ contract('TLSDIDRegistry', (accounts) => {
     changedBlockBN = await tlsdidRegistry.changeRegistry.call(accounts[0], domain);
     assert.deepEqual(changedBlockBN.toNumber() == 0, true, 'Changed block was not equal to 0');
   });
-
-  console.log(accounts[0]);
 });
