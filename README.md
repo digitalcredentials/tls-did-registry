@@ -1,3 +1,5 @@
+## This repo was archived on January 11, 2024 by [[alexfigtree](https://github.com/alexfigtree)]
+
 # tls-did-registry
 
 This repository contains the TLSDIDContract; a ethereum smart contract thats stores a TLS-DID's data and the TLSDIDRegistry; a smart contract that stores mappings between a TLS-DID and a TLSDIDContract.
